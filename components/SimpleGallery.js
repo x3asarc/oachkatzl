@@ -23,23 +23,23 @@ export default function SimpleGallery() {
   ]
 
   return (
-    <div id="galerie" className="bg-background py-24">
+    <div id="galerie" className="bg-background-warm py-24">
       <div className="mx-auto max-w-7xl px-6">
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold text-text mb-4">Galerie</h2>
+          <h2 className="text-3xl font-bold text-forest-deep mb-4">Galerie</h2>
           <p className="text-lg text-gray-600">Entdecken Sie unser gemütliches Appartement</p>
         </div>
         
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {images.map((image, index) => (
-            <div key={index} className="bg-white rounded-lg overflow-hidden shadow-sm">
+            <div key={index} className="bg-background rounded-lg overflow-hidden shadow-lg border border-wood hover:shadow-xl transition-shadow">
               <img
                 src={image.url}
                 alt={image.caption}
                 className="w-full h-64 object-cover"
               />
-              <div className="p-4">
-                <p className="text-sm text-gray-600">{image.caption}</p>
+              <div className="p-4 bg-cream">
+                <p className="text-sm text-text-light">{image.caption}</p>
               </div>
             </div>
           ))}

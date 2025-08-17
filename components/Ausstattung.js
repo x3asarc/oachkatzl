@@ -20,18 +20,18 @@ export default function Ausstattung() {
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
           {amenities.map((amenity, index) => (
-            <div key={index} className="bg-background p-6 rounded-lg">
+            <div key={index} className="bg-background-warm p-6 rounded-lg border border-wood shadow-sm hover:shadow-md transition-shadow">
               <div className="text-2xl mb-3">{amenity.icon}</div>
-              <h3 className="font-semibold text-text">{amenity.name}</h3>
+              <h3 className="font-semibold text-forest-deep">{amenity.name}</h3>
             </div>
           ))}
         </div>
 
-        <div className="bg-accent/10 p-8 rounded-lg text-center">
-          <h3 className="text-xl font-semibold text-text mb-4">Aktivitäten in der Nähe</h3>
+        <div className="bg-accent/10 p-8 rounded-lg text-center border border-stone">
+          <h3 className="text-xl font-semibold text-forest-deep mb-4">Aktivitäten in der Nähe</h3>
           <div className="flex flex-wrap justify-center gap-4">
             {activities.map((activity, index) => (
-              <span key={index} className="bg-white px-4 py-2 rounded-full text-text border border-accent/20">
+              <span key={index} className="bg-cream px-4 py-2 rounded-full text-text border border-wood shadow-sm">
                 {activity}
               </span>
             ))}

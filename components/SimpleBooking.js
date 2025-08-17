@@ -1,6 +1,6 @@
 export default function SimpleBooking() {
   return (
-    <div id="buchung" className="bg-background py-24">
+    <div id="buchung" className="bg-cream py-24">
       <div className="mx-auto max-w-7xl px-6">
         <div className="text-center mb-16">
           <h2 className="text-3xl font-bold text-text mb-4">Buchungsanfrage</h2>
@@ -50,7 +50,7 @@ export default function SimpleBooking() {
               
               <button
                 type="submit"
-                className="w-full rounded-md bg-primary px-6 py-3 text-white font-semibold hover:bg-accent transition-colors"
+                className="w-full rounded-md bg-secondary px-6 py-3 text-white font-semibold hover:bg-primary transition-colors shadow-lg"
               >
                 Anfrage senden
               </button>

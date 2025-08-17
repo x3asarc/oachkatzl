@@ -11,9 +11,9 @@ export default function SimpleHero() {
           {/* Review Score */}
           <div className="mt-6 flex items-center justify-center gap-4">
             <div className="flex items-center gap-2">
-              <div className="bg-primary text-white px-2 py-1 rounded font-bold text-sm">9,7</div>
-              <span className="text-primary font-semibold">Hervorragend</span>
-              <span className="text-gray-600">• 32 Bewertungen</span>
+              <div className="bg-forest-deep text-cream px-2 py-1 rounded font-bold text-sm">9,7</div>
+              <span className="text-forest-deep font-semibold">Hervorragend</span>
+              <span className="text-text-light">• 32 Bewertungen</span>
             </div>
           </div>
           
@@ -25,11 +25,11 @@ export default function SimpleHero() {
           <div className="mt-8 flex items-center justify-center gap-x-6">
             <a
               href="#buchung"
-              className="rounded-md bg-primary px-6 py-3 text-white font-semibold hover:bg-accent transition-colors"
+              className="rounded-md bg-secondary px-6 py-3 text-white font-semibold hover:bg-primary transition-colors shadow-lg"
             >
               Jetzt buchen
             </a>
-            <a href="#galerie" className="text-text font-semibold hover:text-accent">
+            <a href="#galerie" className="text-primary font-semibold hover:text-accent transition-colors">
               Galerie ansehen →
             </a>
           </div>

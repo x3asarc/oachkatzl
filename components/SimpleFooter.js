@@ -28,7 +28,7 @@ export default function SimpleFooter() {
               <p>📞 +43 XXX XXX XXX</p>
               <p>✉️ info@oachkatzl-apartment.com</p>
               <div className="mt-4">
-                <div className="bg-secondary text-primary px-2 py-1 rounded inline-block font-bold text-sm">
+                <div className="bg-secondary text-background px-2 py-1 rounded inline-block font-bold text-sm">
                   9,7 ★ Hervorragend
                 </div>
               </div>

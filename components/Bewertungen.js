@@ -32,30 +32,30 @@ export default function Bewertungen() {
         <div className="text-center mb-16">
           <h2 className="text-3xl font-bold text-text mb-4">Das sagen unsere Gäste</h2>
           <div className="flex items-center justify-center gap-4 mb-8">
-            <div className="bg-primary text-white px-3 py-2 rounded font-bold text-xl">9,7</div>
+            <div className="bg-forest-deep text-cream px-3 py-2 rounded font-bold text-xl">9,7</div>
             <div>
-              <div className="text-primary font-semibold text-lg">Hervorragend</div>
-              <div className="text-gray-600">Basierend auf 32 Bewertungen</div>
+              <div className="text-forest-deep font-semibold text-lg">Hervorragend</div>
+              <div className="text-text-light">Basierend auf 32 Bewertungen</div>
             </div>
           </div>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {reviews.map((review, index) => (
-            <div key={index} className="bg-background p-6 rounded-lg">
+            <div key={index} className="bg-cream p-6 rounded-lg border border-wood shadow-lg">
               <div className="flex items-center gap-4 mb-4">
-                <div className="bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center font-bold">
+                <div className="bg-forest-deep text-cream w-10 h-10 rounded-full flex items-center justify-center font-bold">
                   {review.author[0]}
                 </div>
                 <div>
                   <div className="font-semibold text-text">{review.author}</div>
-                  <div className="text-sm text-gray-600">{review.country}</div>
+                  <div className="text-sm text-text-light">{review.country}</div>
                 </div>
-                <div className="ml-auto bg-primary text-white px-2 py-1 rounded text-sm font-bold">
+                <div className="ml-auto bg-secondary text-white px-2 py-1 rounded text-sm font-bold">
                   {review.rating}
                 </div>
               </div>
-              <p className="text-gray-700 italic">"{review.summary}"</p>
+              <p className="text-text-light italic">"{review.summary}"</p>
             </div>
           ))}
         </div>
