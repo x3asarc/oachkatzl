@@ -1,24 +1,29 @@
 export default function SimpleGallery() {
   const images = [
     {
-      url: 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800',
-      caption: "Gemütlicher Wohnbereich mit Kamin."
+      url: '/images/gallery/wohnbereich.jpg',
+      caption: "Gemütlicher Wohnbereich mit Kamin.",
+      fallback: 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800'
     },
     {
-      url: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800',
-      caption: "Voll ausgestattete Küche für Selbstversorger."
+      url: '/images/gallery/kueche.jpg',
+      caption: "Voll ausgestattete Küche für Selbstversorger.",
+      fallback: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800'
     },
     {
-      url: 'https://images.unsplash.com/photo-1560448075-bb485b067938?w=800',
-      caption: "Schlafzimmer mit atemberaubender Aussicht."
+      url: '/images/gallery/schlafzimmer.jpg',
+      caption: "Schlafzimmer mit atemberaubender Aussicht.",
+      fallback: 'https://images.unsplash.com/photo-1560448075-bb485b067938?w=800'
     },
     {
-      url: 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800',
-      caption: "Modernes Bad mit bodengleicher Dusche."
+      url: '/images/gallery/badezimmer.jpg',
+      caption: "Modernes Bad mit bodengleicher Dusche.",
+      fallback: 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800'
     },
     {
-      url: 'https://images.unsplash.com/photo-1540518614846-7eded433c457?w=800',
-      caption: "Privater Balkon mit Panoramablick."
+      url: '/images/gallery/balkon.jpg',
+      caption: "Privater Balkon mit Panoramablick.",
+      fallback: 'https://images.unsplash.com/photo-1540518614846-7eded433c457?w=800'
     }
   ]
 
