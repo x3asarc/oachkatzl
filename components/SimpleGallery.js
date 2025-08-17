@@ -1,29 +1,46 @@
 export default function SimpleGallery() {
   const images = [
-    'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=500',
-    'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=500',
-    'https://images.unsplash.com/photo-1560448075-bb485b067938?w=500',
-    'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=500',
-    'https://images.unsplash.com/photo-1540518614846-7eded433c457?w=500',
-    'https://images.unsplash.com/photo-1566195992011-5f6b21e539aa?w=500'
+    {
+      url: 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800',
+      caption: "Gemütlicher Wohnbereich mit Kamin."
+    },
+    {
+      url: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800',
+      caption: "Voll ausgestattete Küche für Selbstversorger."
+    },
+    {
+      url: 'https://images.unsplash.com/photo-1560448075-bb485b067938?w=800',
+      caption: "Schlafzimmer mit atemberaubender Aussicht."
+    },
+    {
+      url: 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800',
+      caption: "Modernes Bad mit bodengleicher Dusche."
+    },
+    {
+      url: 'https://images.unsplash.com/photo-1540518614846-7eded433c457?w=800',
+      caption: "Privater Balkon mit Panoramablick."
+    }
   ]
 
   return (
-    <div id="gallery" className="bg-white py-24">
+    <div id="galerie" className="bg-background py-24">
       <div className="mx-auto max-w-7xl px-6">
-        <div className="text-center">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">Gallery</h2>
-          <p className="text-lg text-gray-600 mb-16">Take a virtual tour of our apartment</p>
+        <div className="text-center mb-16">
+          <h2 className="text-3xl font-bold text-text mb-4">Galerie</h2>
+          <p className="text-lg text-gray-600">Entdecken Sie unser gemütliches Appartement</p>
         </div>
         
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {images.map((src, index) => (
-            <div key={index} className="aspect-w-4 aspect-h-3">
+          {images.map((image, index) => (
+            <div key={index} className="bg-white rounded-lg overflow-hidden shadow-sm">
               <img
-                src={src}
-                alt={`Apartment view ${index + 1}`}
-                className="w-full h-64 object-cover rounded-lg"
+                src={image.url}
+                alt={image.caption}
+                className="w-full h-64 object-cover"
               />
+              <div className="p-4">
+                <p className="text-sm text-gray-600">{image.caption}</p>
+              </div>
             </div>
           ))}
         </div>
