@@ -30,8 +30,10 @@ A professional, responsive website for the Appartement "Oachkatzl" luxury apartm
 │   ├── Gallery.js      # Image gallery
 │   ├── BookingForm.js  # Booking form
 │   └── Footer.js       # Footer with links
-├── pages/              # Next.js pages
-│   └── index.js        # Homepage
+├── app/                # Next.js App Router
+│   ├── page.js         # Homepage
+│   ├── layout.js       # Root layout
+│   └── globals.css     # Global styles
 ├── styles/             # CSS files
 │   └── globals.css     # Tailwind CSS
 ├── package.json        # Dependencies
@@ -119,7 +121,7 @@ The booking form currently shows an alert. To make it functional:
    - Mailgun
    - AWS SES
 
-2. **Backend API**: Create API routes in `pages/api/`
+2. **Backend API**: Create API routes in `app/api/`
 
 3. **Database**: Store booking requests in:
    - Supabase
@@ -136,7 +138,7 @@ The booking form currently shows an alert. To make it functional:
 
 ### Adding New Components
 1. Create component in `components/` folder
-2. Import and use in `pages/index.js`
+2. Import and use in `app/page.js`
 3. Style with Tailwind CSS classes
 
 ## 📊 Performance
@@ -164,4 +166,7 @@ For technical support or customization requests, please contact the development 
 
 ---
 
-**Built with ❤️ using Next.js and Tailwind CSS**
+**Built with ❤️ using Next.js 14 App Router and Tailwind CSS 4**
+
+🌐 **Live Demo**: [View Website](https://oachkatzl.vercel.app)  
+📂 **Repository**: [GitHub](https://github.com/x3asarc/oachkatzl)
