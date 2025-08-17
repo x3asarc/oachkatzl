@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 export default function SimpleGallery() {
   const images = [
     {
@@ -39,7 +41,10 @@ export default function SimpleGallery() {
       <div className="mx-auto max-w-7xl px-6">
         <div className="text-center mb-16">
           <h2 className="text-3xl font-bold text-forest-deep mb-4">Galerie</h2>
-          <p className="text-lg text-gray-600">Entdecken Sie unser gemütliches Appartement</p>
+          <p className="text-lg text-gray-600 mb-6">Entdecken Sie unser gemütliches Appartement</p>
+          <Link href="/galerie" className="inline-block bg-accent hover:bg-primary px-6 py-3 rounded-lg text-white font-semibold transition-colors shadow-lg">
+            Alle Bilder ansehen →
+          </Link>
         </div>
         
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
