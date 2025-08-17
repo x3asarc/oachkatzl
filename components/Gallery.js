@@ -1,7 +1,4 @@
-'use client'
-
 import { useState } from 'react'
-import { XMarkIcon } from '@heroicons/react/24/outline'
 
 export default function Gallery() {
   const [selectedImage, setSelectedImage] = useState(null)
@@ -102,7 +99,7 @@ export default function Gallery() {
               onClick={() => setSelectedImage(null)}
               className="absolute -top-12 right-0 text-white hover:text-gray-300"
             >
-              <XMarkIcon className="h-8 w-8" />
+              <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
             </button>
             <img
               src={selectedImage.src}

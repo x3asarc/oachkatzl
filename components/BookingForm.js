@@ -1,7 +1,4 @@
-'use client'
-
 import { useState } from 'react'
-import { CalendarIcon, PhoneIcon, EnvelopeIcon, MapPinIcon } from '@heroicons/react/24/outline'
 
 export default function BookingForm() {
   const [formData, setFormData] = useState({
