@@ -1,29 +1,36 @@
 export default function SimpleGallery() {
   const images = [
     {
-      url: '/images/gallery/wohnbereich.jpg',
-      caption: "Gemütlicher Wohnbereich mit Kamin.",
-      fallback: 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800'
+      url: '/images/gallery/wohnraum-ferienwohnung-oachkatzl-2.webp',
+      caption: "Gemütlicher Wohnbereich mit Sitzgelegenheit und Fernseher"
     },
     {
-      url: '/images/gallery/kueche.jpg',
-      caption: "Voll ausgestattete Küche für Selbstversorger.",
-      fallback: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800'
+      url: '/images/gallery/kueche-in-der-ferienwohnung-oachkatzl-2.webp',
+      caption: "Voll ausgestattete Küche für Selbstversorger"
     },
     {
-      url: '/images/gallery/schlafzimmer.jpg',
-      caption: "Schlafzimmer mit atemberaubender Aussicht.",
-      fallback: 'https://images.unsplash.com/photo-1560448075-bb485b067938?w=800'
+      url: '/images/gallery/schlafzimmer-eltern-9.webp',
+      caption: "Hauptschlafzimmer mit Doppelbett und Bergblick"
     },
     {
-      url: '/images/gallery/badezimmer.jpg',
-      caption: "Modernes Bad mit bodengleicher Dusche.",
-      fallback: 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800'
+      url: '/images/gallery/schlafzimmer-kinder-5.webp',
+      caption: "Kinderschlafzimmer mit Stockbett"
     },
     {
-      url: '/images/gallery/balkon.jpg',
-      caption: "Privater Balkon mit Panoramablick.",
-      fallback: 'https://images.unsplash.com/photo-1540518614846-7eded433c457?w=800'
+      url: '/images/gallery/badezimmer-in-der-ferienwohnung-oachkatzl-2.webp',
+      caption: "Modernes Badezimmer mit Dusche"
+    },
+    {
+      url: '/images/gallery/ausblick-von-der-ferienwohnung-oachkatzl-volders-2.webp',
+      caption: "Atemberaubender Bergblick von der Terrasse"
+    },
+    {
+      url: '/images/gallery/terrasse-16.webp',
+      caption: "Private Terrasse mit Gartenmöbeln"
+    },
+    {
+      url: '/images/gallery/grillplatz-5.webp',
+      caption: "Gemeinschaftlicher Grillplatz im Garten"
     }
   ]
 
@@ -35,7 +42,7 @@ export default function SimpleGallery() {
           <p className="text-lg text-gray-600">Entdecken Sie unser gemütliches Appartement</p>
         </div>
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {images.map((image, index) => (
             <div key={index} className="bg-background rounded-lg overflow-hidden shadow-lg border border-wood hover:shadow-xl transition-shadow">
               <img
