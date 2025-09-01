@@ -14,12 +14,11 @@ import {
   PawPrint, 
   UtensilsCrossed,
   Refrigerator,
-  WashingMachine, 
+  Zap, 
   Coffee,
   Mountain,
   Eye,
   Utensils,
-  Barbecue,
   Flower
 } from 'lucide-react'
 
@@ -44,7 +43,7 @@ const AmenitiesGrid = ({ propertyData }) => {
       items: [
         { name: 'Private Terrasse', icon: <Flower className="w-5 h-5" />, included: true, featured: true, description: 'Möblierte Terrasse mit Bergblick' },
         { name: 'Privater Garten', icon: <Trees className="w-5 h-5" />, included: true, featured: true, description: 'Gepflegter Garten mit Sitzbereich' },
-        { name: 'Grillmöglichkeit', icon: <Barbecue className="w-5 h-5" />, included: true, description: 'BBQ-Bereich für gesellige Abende' },
+        { name: 'Grillmöglichkeit', icon: <Flame className="w-5 h-5" />, included: true, description: 'BBQ-Bereich für gesellige Abende' },
         { name: 'Gartenmöbel', icon: <Flower className="w-5 h-5" />, included: true },
         { name: 'Outdoor Essbereich', icon: <UtensilsCrossed className="w-5 h-5" />, included: true }
       ]
@@ -71,7 +70,7 @@ const AmenitiesGrid = ({ propertyData }) => {
       items: [
         { name: 'Fußbodenheizung', icon: <Snowflake className="w-5 h-5" />, included: true, featured: true, description: 'Warme Füße auch im Winter' },
         { name: 'Kamin', icon: <Flame className="w-5 h-5" />, included: true, featured: true, description: 'Gemütliche Atmosphäre an kalten Abenden' },
-        { name: 'Waschmaschine', icon: <WashingMachine className="w-5 h-5" />, included: true },
+        { name: 'Waschmaschine', icon: <Zap className="w-5 h-5" />, included: true },
         { name: 'Allergikerfreundlich', icon: <Heart className="w-5 h-5" />, included: true, description: 'Geeignet für Allergiker' },
         { name: 'Skiaufbewahrung', icon: <Mountain className="w-5 h-5" />, included: true, description: 'Sicherer Raum für Skiausrüstung' }
       ]
