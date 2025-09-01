@@ -15,7 +15,7 @@ const propertyData = {
     "name": "Appartement 'Oachkatzl'",
     "type": "Ferienwohnung",
     "address": {
-      "street": "16 Grubertalstraße",
+      "street": "Grubertalstraße 16",
       "postal_code": "6111",
       "city": "Grossvolderberg",
       "country": "Österreich"

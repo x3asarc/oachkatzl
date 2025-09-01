@@ -221,7 +221,7 @@ const BookingCTA = ({ variant = 'primary', propertyData, className = '' }) => {
               </div>
               <div className="flex gap-3 flex-shrink-0">
                 <Button 
-                  variant="outline" 
+                  className="bg-white/10 backdrop-blur-sm border-2 border-white text-white hover:bg-white hover:text-blue-800 min-h-[48px]"
                   onClick={() => setIsDialogOpen(true)}
                 >
                   Anfrage senden

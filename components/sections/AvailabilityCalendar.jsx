@@ -379,7 +379,7 @@ const AvailabilityCalendar = ({ propertyData }) => {
                   </p>
                   <Dialog>
                     <DialogTrigger asChild>
-                      <Button variant="outline" size="sm">
+                      <Button className="bg-green-600 hover:bg-green-700 text-white min-h-[44px] px-4 text-sm">
                         Details erfahren
                       </Button>
                     </DialogTrigger>

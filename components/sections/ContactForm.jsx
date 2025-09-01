@@ -103,7 +103,7 @@ const ContactForm = ({ propertyData }) => {
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button 
                   onClick={() => setIsSubmitted(false)}
-                  variant="outline"
+                  className="bg-gray-100 hover:bg-gray-200 text-gray-700 border-gray-300 min-h-[48px]"
                 >
                   Weitere Anfrage senden
                 </Button>
@@ -152,7 +152,13 @@ const ContactForm = ({ propertyData }) => {
                       <p className="text-sm text-gray-600 mb-3">{method.description}</p>
                       <Button 
                         size="sm" 
-                        variant="outline"
+                        className={`min-h-[44px] px-3 text-white ${
+                          method.title === 'Booking.com' 
+                            ? 'bg-blue-600 hover:bg-blue-700' 
+                            : method.title === 'Telefon'
+                            ? 'bg-green-600 hover:bg-green-700'
+                            : 'bg-purple-600 hover:bg-purple-700'
+                        }`}
                         onClick={() => window.open(method.action, method.title === 'Booking.com' ? '_blank' : '_self')}
                       >
                         {method.actionText}

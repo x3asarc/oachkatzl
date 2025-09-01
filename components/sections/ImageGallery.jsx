@@ -147,7 +147,7 @@ const ImageGallery = ({ propertyData }) => {
           </div>
 
           {/* Grid Images */}
-          {galleryImages.slice(1, 5).map((image, index) => (
+          {galleryImages.slice(1, 7).map((image, index) => (
             <Card key={index} className="overflow-hidden cursor-pointer group touch-manipulation" 
                   onClick={() => handleImageClick(image)}>
               <div className="relative h-40 sm:h-48 lg:h-60">
@@ -176,7 +176,7 @@ const ImageGallery = ({ propertyData }) => {
           
           <Carousel className="w-full">
             <CarouselContent className="-ml-2 sm:-ml-4">
-              {galleryImages.slice(5).map((image, index) => (
+              {galleryImages.slice(7).map((image, index) => (
                 <CarouselItem key={index} className="pl-2 sm:pl-4 basis-4/5 sm:basis-1/2 lg:basis-1/3">
                   <Card className="overflow-hidden cursor-pointer group touch-manipulation" 
                         onClick={() => handleImageClick(image)}>
@@ -206,10 +206,8 @@ const ImageGallery = ({ propertyData }) => {
         {/* View All Images Button */}
         <div className="text-center mt-6 sm:mt-8">
           <Button 
-            variant="outline" 
-            size="lg" 
+            className="group min-h-[48px] px-6 py-3 w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white"
             onClick={() => handleImageClick(galleryImages[0])}
-            className="group min-h-[48px] px-6 py-3 w-full sm:w-auto"
           >
             <ImageIcon className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
             <span className="text-sm sm:text-base">Alle {galleryImages.length} Bilder ansehen</span>
@@ -220,32 +218,32 @@ const ImageGallery = ({ propertyData }) => {
 
       {/* Image Dialog/Modal */}
       <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
-        <DialogContent className="max-w-4xl max-h-[90vh] overflow-hidden p-0">
+        <DialogContent className="max-w-[95vw] sm:max-w-4xl max-h-[95vh] overflow-hidden p-0 m-2">
           <div className="relative">
             {selectedImage && (
               <>
                 <img 
                   src={selectedImage.src}
                   alt={selectedImage.alt}
-                  className="w-full max-h-[70vh] object-contain"
+                  className="w-full max-h-[60vh] sm:max-h-[70vh] object-contain bg-gray-50"
                 />
-                <div className="p-6">
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <Badge className="mb-2">{selectedImage.category}</Badge>
-                      <h4 className="text-xl font-semibold">{selectedImage.alt}</h4>
+                <div className="p-3 sm:p-6">
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="flex-1 min-w-0">
+                      <Badge className="mb-2 text-xs">{selectedImage.category}</Badge>
+                      <h4 className="text-base sm:text-xl font-semibold truncate">{selectedImage.alt}</h4>
                     </div>
-                    <div className="text-sm text-gray-500">
-                      {galleryImages.findIndex(img => img === selectedImage) + 1} von {galleryImages.length}
+                    <div className="text-xs sm:text-sm text-gray-500 ml-2 flex-shrink-0">
+                      {galleryImages.findIndex(img => img === selectedImage) + 1} / {galleryImages.length}
                     </div>
                   </div>
                   
                   {/* Navigation to next/previous images */}
-                  <div className="flex gap-2 mt-4">
+                  <div className="flex gap-1 sm:gap-2 mt-4 overflow-x-auto pb-2">
                     {galleryImages.map((img, index) => (
                       <button
                         key={index}
-                        className={`relative w-16 h-12 rounded overflow-hidden transition-opacity ${
+                        className={`relative w-12 h-9 sm:w-16 sm:h-12 rounded overflow-hidden transition-opacity flex-shrink-0 touch-manipulation ${
                           img === selectedImage ? 'ring-2 ring-blue-600' : 'opacity-60 hover:opacity-100'
                         }`}
                         onClick={() => setSelectedImage(img)}

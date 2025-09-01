@@ -24,8 +24,8 @@ const LocationSection = ({ propertyData }) => {
   // Fallback to Google Maps static image (more reliable)
   const googleMapsStaticUrl = `https://maps.googleapis.com/maps/api/staticmap?center=Grossvolderberg,Austria&zoom=13&size=800x400&maptype=roadmap&markers=color:blue%7Clabel:A%7CGrossvolderberg,Austria&key=YOUR_GOOGLE_MAPS_API_KEY`
   
-  // Simple embedded map using OpenStreetMap
-  const osmEmbedUrl = `https://www.openstreetmap.org/export/embed.html?bbox=11.45%2C47.25%2C11.55%2C47.33&layer=mapnik&marker=47.29%2C11.5`
+  // Simple embedded map using OpenStreetMap with precise coordinates for Grubertalstraße 16
+  const osmEmbedUrl = `https://www.openstreetmap.org/export/embed.html?bbox=11.4900%2C47.2850%2C11.5100%2C47.2950&layer=mapnik&marker=47.2900%2C11.5000`
 
   const nearbyAttractions = [
     ...propertyData.nearby_attractions.within_5km.map(attraction => ({
@@ -142,7 +142,7 @@ const LocationSection = ({ propertyData }) => {
                     </div>
                     <Button 
                       size="sm" 
-                      variant="outline"
+                      className="bg-blue-600 hover:bg-blue-700 text-white border-blue-600 min-h-[44px] px-3"
                       onClick={() => window.open(`https://maps.google.com/maps?q=${encodeURIComponent(address)}`, '_blank')}
                     >
                       <ExternalLink className="w-4 h-4 mr-1" />

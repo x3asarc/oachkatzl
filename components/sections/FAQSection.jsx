@@ -226,8 +226,7 @@ const FAQSection = ({ propertyData }) => {
                 
                 <div className="space-y-3">
                   <Button 
-                    variant="outline" 
-                    className="w-full justify-start"
+                    className="w-full justify-start bg-green-50 hover:bg-green-100 text-green-700 border-green-200 min-h-[48px]"
                     onClick={() => window.location.href = 'tel:+43123456789'}
                   >
                     <Phone className="w-4 h-4 mr-2" />
@@ -235,8 +234,7 @@ const FAQSection = ({ propertyData }) => {
                   </Button>
                   
                   <Button 
-                    variant="outline" 
-                    className="w-full justify-start"
+                    className="w-full justify-start bg-blue-50 hover:bg-blue-100 text-blue-700 border-blue-200 min-h-[48px]"
                     onClick={() => window.location.href = 'mailto:info@oachkatzl.at'}
                   >
                     <MessageCircle className="w-4 h-4 mr-2" />
