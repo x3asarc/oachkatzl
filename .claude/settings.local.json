@@ -8,7 +8,13 @@
       "Bash(mkdir:*)",
       "Bash(npx:*)",
       "Bash(pkill:*)",
-      "Bash(npm install:*)"
+      "Bash(npm install:*)",
+      "Bash(npm run dev:*)",
+      "Bash(timeout:*)",
+      "WebFetch(domain:ui.shadcn.com)",
+      "WebFetch(domain:vercel.com)",
+      "Bash(dir:*)",
+      "Bash(npm run build:*)"
     ],
     "deny": [],
     "ask": []

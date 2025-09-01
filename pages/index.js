@@ -1,8 +1,14 @@
 import Head from 'next/head'
-import { Badge } from '@/components/ui/badge'
-import { Button } from '@/components/ui/button'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import { Separator } from '@/components/ui/separator'
+import HeroSection from '@/components/sections/HeroSection'
+import ImageGallery from '@/components/sections/ImageGallery'
+import BookingCTA from '@/components/sections/BookingCTA'
+import AmenitiesGrid from '@/components/sections/AmenitiesGrid'
+import TestimonialsSection from '@/components/sections/TestimonialsSection'
+import PropertyDetails from '@/components/sections/PropertyDetails'
+import LocationSection from '@/components/sections/LocationSection'
+import ContactForm from '@/components/sections/ContactForm'
+import AvailabilityCalendar from '@/components/sections/AvailabilityCalendar'
+import FAQSection from '@/components/sections/FAQSection'
 
 const propertyData = {
   "property": {
@@ -179,326 +185,35 @@ const propertyData = {
   }
 }
 
-export default function Home() {
+export default function LandingPage() {
   return (
     <>
       <Head>
-        <title>Appartement 'Oachkatzl' - Ferienwohnung in Grossvolderberg</title>
-        <meta name="description" content="Das Appartement 'Oachkatzl' bietet eine gemütliche Unterkunft mit Bergblick, Garten und Terrasse. Ideal für einen ruhigen Urlaub in der Natur." />
+        <title>Appartement 'Oachkatzl' - Modern Retreat in Grossvolderberg | Booking Available</title>
+        <meta name="description" content="Experience luxury mountain living at Appartement 'Oachkatzl' in Grossvolderberg. Stunning panoramic views, fully equipped kitchen, free parking, and pet-friendly. Book your perfect Alpine getaway today!" />
+        <meta name="keywords" content="Appartement Oachkatzl, Grossvolderberg, Ferienwohnung, Tirol, Austria, vacation rental, mountain view, booking" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
         <meta name="language" content="de-DE" />
+        <meta property="og:title" content="Appartement 'Oachkatzl' - Modern Mountain Retreat" />
+        <meta property="og:description" content="Luxury vacation apartment with panoramic mountain views in Grossvolderberg, Austria. Book your perfect Alpine escape!" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="/images/hero-background.jpg" />
+        <meta name="twitter:card" content="summary_large_image" />
       </Head>
       
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
-        {/* Hero Section */}
-        <div className="relative bg-gradient-to-r from-blue-600 to-blue-800 text-white">
-          <div className="absolute inset-0 bg-black/20"></div>
-          <div className="relative max-w-7xl mx-auto px-4 py-24">
-            <div className="text-center space-y-6">
-              <Badge variant="secondary" className="bg-white/20 text-white border-white/30">
-                {propertyData.property.type}
-              </Badge>
-              <h1 className="text-5xl font-bold tracking-tight">
-                {propertyData.property.name}
-              </h1>
-              <p className="text-xl text-blue-100 max-w-2xl mx-auto">
-                {propertyData.special_features.location_description}
-              </p>
-              <div className="flex items-center justify-center gap-4 text-lg">
-                <span>⭐ {propertyData.ratings.overall_rating}/10</span>
-                <span>•</span>
-                <span>{propertyData.ratings.rating_category}</span>
-                <span>•</span>
-                <span>{propertyData.ratings.total_reviews} Bewertungen</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="max-w-7xl mx-auto px-4 py-12 space-y-12">
-          {/* Quick Info Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-            <Card>
-              <CardContent className="p-6 text-center">
-                <div className="text-2xl font-bold text-blue-600">{propertyData.accommodation_details.size}</div>
-                <div className="text-sm text-gray-600">Wohnfläche</div>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardContent className="p-6 text-center">
-                <div className="text-2xl font-bold text-blue-600">{propertyData.accommodation_details.bedrooms}</div>
-                <div className="text-sm text-gray-600">Schlafzimmer</div>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardContent className="p-6 text-center">
-                <div className="text-2xl font-bold text-blue-600">{propertyData.accommodation_details.max_guests}</div>
-                <div className="text-sm text-gray-600">Gäste</div>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardContent className="p-6 text-center">
-                <div className="text-2xl font-bold text-blue-600">{propertyData.special_features.renovation_year}</div>
-                <div className="text-sm text-gray-600">Renoviert</div>
-              </CardContent>
-            </Card>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {/* Left Column */}
-            <div className="lg:col-span-2 space-y-8">
-              {/* Property Details */}
-              <Card>
-                <CardHeader>
-                  <CardTitle className="flex items-center gap-2">
-                    🏠 Unterkunftsdetails
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <div>
-                    <h4 className="font-semibold mb-2">Adresse</h4>
-                    <p className="text-gray-700">
-                      {propertyData.property.address.street}<br/>
-                      {propertyData.property.address.postal_code} {propertyData.property.address.city}<br/>
-                      {propertyData.property.address.country}
-                    </p>
-                  </div>
-                  <Separator />
-                  <div>
-                    <h4 className="font-semibold mb-2">Zimmeraufteilung</h4>
-                    <ul className="space-y-1 text-gray-700">
-                      <li>• Schlafzimmer 1: {propertyData.accommodation_details.bedroom_configuration.bedroom_1}</li>
-                      <li>• Schlafzimmer 2: {propertyData.accommodation_details.bedroom_configuration.bedroom_2}</li>
-                      <li>• {propertyData.accommodation_details.bathrooms} Badezimmer</li>
-                    </ul>
-                  </div>
-                </CardContent>
-              </Card>
-
-              {/* Amenities */}
-              <Card>
-                <CardHeader>
-                  <CardTitle className="flex items-center gap-2">
-                    ⚡ Ausstattung
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-6">
-                  <div>
-                    <h4 className="font-semibold mb-2">Küche</h4>
-                    <div className="flex flex-wrap gap-2">
-                      {propertyData.amenities.kitchen.appliances.map((appliance, i) => (
-                        <Badge key={i} variant="secondary">{appliance}</Badge>
-                      ))}
-                    </div>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold mb-2">Außenbereich</h4>
-                    <div className="flex flex-wrap gap-2">
-                      {propertyData.amenities.views.map((view, i) => (
-                        <Badge key={i} variant="outline">{view}</Badge>
-                      ))}
-                    </div>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold mb-2">Weitere Ausstattung</h4>
-                    <div className="flex flex-wrap gap-2">
-                      {propertyData.amenities.other.map((item, i) => (
-                        <Badge key={i} variant="secondary">{item}</Badge>
-                      ))}
-                    </div>
-                  </div>
-                  <div className="grid grid-cols-2 gap-4 text-sm">
-                    <div>
-                      <span className="font-medium">WLAN:</span> ⭐ {propertyData.amenities.internet.wifi_rating}/10
-                    </div>
-                    <div>
-                      <span className="font-medium">Parkplatz:</span> {propertyData.amenities.parking.cost}
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-
-              {/* Activities */}
-              <Card>
-                <CardHeader>
-                  <CardTitle className="flex items-center gap-2">
-                    🏔️ Aktivitäten in der Umgebung
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="flex flex-wrap gap-2">
-                    {propertyData.activities.map((activity, i) => (
-                      <Badge key={i} variant="outline">{activity}</Badge>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-
-            {/* Right Column */}
-            <div className="space-y-8">
-              {/* Ratings */}
-              <Card>
-                <CardHeader>
-                  <CardTitle className="flex items-center gap-2">
-                    ⭐ Bewertungen
-                    <Badge className="bg-green-100 text-green-800">
-                      {propertyData.ratings.overall_rating}/10
-                    </Badge>
-                  </CardTitle>
-                  <CardDescription>
-                    {propertyData.ratings.rating_category} • {propertyData.ratings.total_reviews} Bewertungen
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="space-y-3">
-                  {Object.entries(propertyData.ratings.detailed_ratings).map(([key, value]) => (
-                    <div key={key} className="flex justify-between items-center">
-                      <span className="text-sm capitalize">{key.replace('_', ' ')}</span>
-                      <span className="font-semibold">{value}</span>
-                    </div>
-                  ))}
-                </CardContent>
-              </Card>
-
-              {/* Check-in/out */}
-              <Card>
-                <CardHeader>
-                  <CardTitle className="flex items-center gap-2">
-                    🕒 Check-in & Check-out
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-3">
-                  <div>
-                    <div className="font-medium">Check-in</div>
-                    <div className="text-sm text-gray-600">
-                      {propertyData.policies.check_in.from} - {propertyData.policies.check_in.until}
-                    </div>
-                  </div>
-                  <div>
-                    <div className="font-medium">Check-out</div>
-                    <div className="text-sm text-gray-600">
-                      {propertyData.policies.check_out.from} - {propertyData.policies.check_out.until}
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-
-              {/* Policies */}
-              <Card>
-                <CardHeader>
-                  <CardTitle className="flex items-center gap-2">
-                    📋 Hausregeln
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-2 text-sm">
-                  <div className="flex justify-between">
-                    <span>Rauchen</span>
-                    <span className="text-red-600">❌ Nicht gestattet</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span>Partys</span>
-                    <span className="text-red-600">❌ Nicht gestattet</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span>Haustiere</span>
-                    <span className="text-green-600">✅ Erlaubt ({propertyData.policies.pets.fee})</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span>Kinder</span>
-                    <span className="text-green-600">✅ Alle Altersgruppen</span>
-                  </div>
-                </CardContent>
-              </Card>
-
-              {/* Nearby Attractions */}
-              <Card>
-                <CardHeader>
-                  <CardTitle className="flex items-center gap-2">
-                    🎯 Sehenswürdigkeiten
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-3">
-                  <div>
-                    <h4 className="font-medium mb-2">In der Nähe (< 5km)</h4>
-                    {propertyData.nearby_attractions.within_5km.map((attraction, i) => (
-                      <div key={i} className="flex justify-between text-sm">
-                        <span>{attraction.name}</span>
-                        <span className="text-gray-500">{attraction.distance}</span>
-                      </div>
-                    ))}
-                  </div>
-                  <Separator />
-                  <div>
-                    <h4 className="font-medium mb-2">Weitere Attraktionen</h4>
-                    {propertyData.nearby_attractions.major_attractions.slice(0, 3).map((attraction, i) => (
-                      <div key={i} className="flex justify-between text-sm">
-                        <span>{attraction.name}</span>
-                        <span className="text-gray-500">{attraction.distance}</span>
-                      </div>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-
-          {/* Guest Reviews */}
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                💬 Was Gäste sagen
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {propertyData.guest_reviews_highlights.slice(0, 4).map((review, i) => (
-                  <div key={i} className="bg-gray-50 p-4 rounded-lg">
-                    <p className="text-sm italic">"{review}"</p>
-                  </div>
-                ))}
-              </div>
-            </CardContent>
-          </Card>
-
-          {/* Special Features */}
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                ✨ Besonderheiten
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              <div>
-                <h4 className="font-medium">🏔️ Panoramablick</h4>
-                <p className="text-gray-600">{propertyData.special_features.panoramic_view}</p>
-              </div>
-              <div>
-                <h4 className="font-medium">🚗 Anfahrt</h4>
-                <p className="text-gray-600">{propertyData.special_features.access_note}</p>
-              </div>
-              <div>
-                <h4 className="font-medium">🗣️ Sprachen</h4>
-                <div className="flex gap-2">
-                  {propertyData.languages_spoken.map((lang, i) => (
-                    <Badge key={i} variant="outline">{lang}</Badge>
-                  ))}
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-
-          {/* Booking Section */}
-          <div className="text-center py-12">
-            <h2 className="text-3xl font-bold mb-4">Bereit für Ihren Aufenthalt?</h2>
-            <p className="text-gray-600 mb-8">
-              Erleben Sie die Ruhe und Schönheit der Tiroler Berge im Appartement 'Oachkatzl'
-            </p>
-            <Button size="lg" className="bg-blue-600 hover:bg-blue-700">
-              Jetzt auf Booking.com buchen
-            </Button>
-          </div>
-        </div>
+      <div className="min-h-screen">
+        <HeroSection propertyData={propertyData} />
+        <ImageGallery propertyData={propertyData} />
+        <BookingCTA variant="primary" propertyData={propertyData} />
+        <AmenitiesGrid propertyData={propertyData} />
+        <TestimonialsSection propertyData={propertyData} />
+        <PropertyDetails propertyData={propertyData} />
+        <BookingCTA variant="secondary" propertyData={propertyData} />
+        <LocationSection propertyData={propertyData} />
+        <AvailabilityCalendar propertyData={propertyData} />
+        <ContactForm propertyData={propertyData} />
+        <FAQSection propertyData={propertyData} />
       </div>
     </>
   )
