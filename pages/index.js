@@ -1,4 +1,5 @@
-import Head from 'next/head'
+import MetaTags from '@/components/seo/MetaTags'
+import StickyHeader from '@/components/navigation/StickyHeader'
 import HeroSection from '@/components/sections/HeroSection'
 import ImageGallery from '@/components/sections/ImageGallery'
 import BookingCTA from '@/components/sections/BookingCTA'
@@ -6,9 +7,11 @@ import AmenitiesGrid from '@/components/sections/AmenitiesGrid'
 import TestimonialsSection from '@/components/sections/TestimonialsSection'
 import PropertyDetails from '@/components/sections/PropertyDetails'
 import LocationSection from '@/components/sections/LocationSection'
+import ExploreRegion from '@/components/sections/ExploreRegion'
 import ContactForm from '@/components/sections/ContactForm'
 import AvailabilityCalendar from '@/components/sections/AvailabilityCalendar'
 import FAQSection from '@/components/sections/FAQSection'
+import Footer from '@/components/sections/Footer'
 
 const propertyData = {
   "property": {
@@ -186,23 +189,96 @@ const propertyData = {
 }
 
 export default function LandingPage() {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": ["VacationRental", "Product"],
+    "name": "Appartement 'Oachkatzl' - Luxury Mountain Retreat",
+    "description": "Spacious 2-bedroom luxury apartment with mountain views, modern amenities, and traditional Alpine charm in Volders, Tirol",
+    "image": [
+      "https://oachkatzl.com/images/gallery/image2.webp",
+      "https://oachkatzl.com/images/gallery/image3.webp",
+      "https://oachkatzl.com/images/gallery/image5.webp"
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Grubertalstraße 16",
+      "addressLocality": "Grossvolderberg",
+      "postalCode": "6111",
+      "addressRegion": "Tirol",
+      "addressCountry": "AT"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 47.2833,
+      "longitude": 11.5500
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "9.7",
+      "bestRating": "10",
+      "worstRating": "1",
+      "ratingCount": "35",
+      "reviewCount": "35"
+    },
+    "offers": {
+      "@type": "Offer",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock",
+      "validFrom": "2025-01-01",
+      "validThrough": "2025-12-31"
+    },
+    "amenityFeature": [
+      {
+        "@type": "LocationFeatureSpecification",
+        "name": "Free WiFi",
+        "value": true
+      },
+      {
+        "@type": "LocationFeatureSpecification",
+        "name": "Free Parking",
+        "value": true
+      },
+      {
+        "@type": "LocationFeatureSpecification",
+        "name": "Pet Friendly",
+        "value": true
+      },
+      {
+        "@type": "LocationFeatureSpecification",
+        "name": "Mountain View",
+        "value": true
+      },
+      {
+        "@type": "LocationFeatureSpecification",
+        "name": "Fully Equipped Kitchen",
+        "value": true
+      }
+    ],
+    "numberOfRooms": 2,
+    "occupancy": {
+      "@type": "QuantitativeValue",
+      "minValue": 1,
+      "maxValue": 4
+    },
+    "floorSize": {
+      "@type": "QuantitativeValue",
+      "value": 54,
+      "unitCode": "MTK"
+    }
+  };
+
   return (
     <>
-      <Head>
-        <title>Appartement 'Oachkatzl' - Modern Retreat in Grossvolderberg | Booking Available</title>
-        <meta name="description" content="Experience luxury mountain living at Appartement 'Oachkatzl' in Grossvolderberg. Stunning panoramic views, fully equipped kitchen, free parking, and pet-friendly. Book your perfect Alpine getaway today!" />
-        <meta name="keywords" content="Appartement Oachkatzl, Grossvolderberg, Ferienwohnung, Tirol, Austria, vacation rental, mountain view, booking" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
-        <meta name="language" content="de-DE" />
-        <meta property="og:title" content="Appartement 'Oachkatzl' - Modern Mountain Retreat" />
-        <meta property="og:description" content="Luxury vacation apartment with panoramic mountain views in Grossvolderberg, Austria. Book your perfect Alpine escape!" />
-        <meta property="og:type" content="website" />
-        <meta property="og:image" content="/images/hero-background.jpg" />
-        <meta name="twitter:card" content="summary_large_image" />
-      </Head>
+      <MetaTags
+        title="Vacation Rentals Tirol Austria | Oachkatzl Apartments"
+        description="Luxury mountain apartment in Volders, Tirol. Hot tub, hiking trails, booking available. Your Alpine escape awaits!"
+        url="/"
+        structuredData={structuredData}
+      />
       
-      <div className="min-h-screen">
+      <StickyHeader />
+      
+      <div className="min-h-screen pt-16 md:pt-20">
         <HeroSection propertyData={propertyData} />
         <ImageGallery propertyData={propertyData} />
         <BookingCTA variant="primary" propertyData={propertyData} />
@@ -211,10 +287,13 @@ export default function LandingPage() {
         <PropertyDetails propertyData={propertyData} />
         <BookingCTA variant="secondary" propertyData={propertyData} />
         <LocationSection propertyData={propertyData} />
+        <ExploreRegion />
         <AvailabilityCalendar propertyData={propertyData} />
         <ContactForm propertyData={propertyData} />
         <FAQSection propertyData={propertyData} />
       </div>
+      
+      <Footer />
     </>
   )
 }

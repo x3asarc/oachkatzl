@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
@@ -12,7 +13,9 @@ import {
   Camera,
   Clock,
   ExternalLink,
-  Star
+  Star,
+  ChevronRight,
+  Sparkles
 } from 'lucide-react'
 
 const LocationSection = ({ propertyData }) => {
@@ -31,12 +34,14 @@ const LocationSection = ({ propertyData }) => {
     ...propertyData.nearby_attractions.within_5km.map(attraction => ({
       ...attraction,
       category: 'Nahbereich',
-      time: 'Zu Fuß erreichbar'
+      time: 'Zu Fuß erreichbar',
+      link: attraction.name.includes('Swarovski') ? '/local-guide/attractions/swarovski-kristallwelten' : null
     })),
     ...propertyData.nearby_attractions.major_attractions.map(attraction => ({
       ...attraction,
       category: 'Sehenswürdigkeiten',
-      time: 'Mit dem Auto'
+      time: 'Mit dem Auto',
+      link: attraction.name.includes('Hauptbahnhof Innsbruck') ? '/local-guide/hall-in-tirol' : null
     }))
   ]
 
@@ -221,10 +226,11 @@ const LocationSection = ({ propertyData }) => {
 
         {/* Detailed Information Tabs */}
         <Tabs defaultValue="attractions" className="w-full">
-          <TabsList className="grid w-full grid-cols-3">
+          <TabsList className="grid w-full grid-cols-4">
             <TabsTrigger value="attractions" className="flex items-center gap-2">
               <Camera className="w-4 h-4" />
-              Sehenswürdigkeiten
+              <span className="hidden sm:inline">Sehenswürdigkeiten</span>
+              <span className="sm:hidden">Sehen</span>
             </TabsTrigger>
             <TabsTrigger value="transport" className="flex items-center gap-2">
               <Navigation className="w-4 h-4" />
@@ -232,28 +238,51 @@ const LocationSection = ({ propertyData }) => {
             </TabsTrigger>
             <TabsTrigger value="activities" className="flex items-center gap-2">
               <Mountain className="w-4 h-4" />
-              Aktivitäten
+              <span className="hidden sm:inline">Aktivitäten</span>
+              <span className="sm:hidden">Aktiv</span>
+            </TabsTrigger>
+            <TabsTrigger value="explore" className="flex items-center gap-2">
+              <Sparkles className="w-4 h-4" />
+              <span className="hidden sm:inline">Entdecken</span>
+              <span className="sm:hidden">Mehr</span>
             </TabsTrigger>
           </TabsList>
 
           <TabsContent value="attractions" className="mt-8">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {nearbyAttractions.map((attraction, index) => (
-                <Card key={index} className="hover:shadow-lg transition-shadow">
-                  <CardContent className="p-6">
-                    <div className="flex items-start justify-between mb-3">
-                      <h4 className="font-semibold text-gray-900 pr-2">{attraction.name}</h4>
-                      <Badge variant="outline" className="text-xs flex-shrink-0">
-                        {attraction.category}
-                      </Badge>
-                    </div>
-                    <div className="flex items-center justify-between text-sm">
-                      <span className="text-gray-600">{attraction.time}</span>
-                      <span className="font-medium text-blue-600">{attraction.distance}</span>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
+              {nearbyAttractions.map((attraction, index) => {
+                const content = (
+                  <Card className="hover:shadow-lg transition-shadow cursor-pointer">
+                    <CardContent className="p-6">
+                      <div className="flex items-start justify-between mb-3">
+                        <h4 className="font-semibold text-gray-900 pr-2">{attraction.name}</h4>
+                        <Badge variant="outline" className="text-xs flex-shrink-0">
+                          {attraction.category}
+                        </Badge>
+                      </div>
+                      <div className="flex items-center justify-between text-sm">
+                        <span className="text-gray-600">{attraction.time}</span>
+                        <span className="font-medium text-blue-600">{attraction.distance}</span>
+                      </div>
+                      {attraction.link && (
+                        <div className="mt-3 pt-3 border-t">
+                          <span className="text-xs text-green-600 flex items-center">
+                            Mehr erfahren <ChevronRight className="w-3 h-3 ml-1" />
+                          </span>
+                        </div>
+                      )}
+                    </CardContent>
+                  </Card>
+                );
+                
+                return attraction.link ? (
+                  <Link key={index} href={attraction.link}>
+                    {content}
+                  </Link>
+                ) : (
+                  <div key={index}>{content}</div>
+                );
+              })}
             </div>
           </TabsContent>
 
@@ -322,6 +351,57 @@ const LocationSection = ({ propertyData }) => {
                   </CardContent>
                 </Card>
               ))}
+            </div>
+          </TabsContent>
+
+          <TabsContent value="explore" className="mt-8">
+            <div className="bg-gradient-to-r from-green-50 to-blue-50 rounded-xl p-8">
+              <h3 className="text-2xl font-bold mb-4">Entdecken Sie die Region Hall-Wattens</h3>
+              <p className="text-gray-600 mb-6">
+                Erkunden Sie historische Dörfer, weltberühmte Attraktionen und alpine Abenteuer - 
+                alles in Reichweite Ihrer Unterkunft.
+              </p>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
+                <Link href="/local-guide/attractions/swarovski-kristallwelten" 
+                      className="flex items-center p-4 bg-white rounded-lg hover:shadow-md transition-shadow">
+                  <Sparkles className="w-8 h-8 text-purple-600 mr-3" />
+                  <div>
+                    <h4 className="font-semibold">Swarovski Kristallwelten</h4>
+                    <p className="text-sm text-gray-600">5 km • 2M+ Besucher/Jahr</p>
+                  </div>
+                </Link>
+                
+                <Link href="/local-guide/hall-in-tirol" 
+                      className="flex items-center p-4 bg-white rounded-lg hover:shadow-md transition-shadow">
+                  <Mountain className="w-8 h-8 text-amber-600 mr-3" />
+                  <div>
+                    <h4 className="font-semibold">Hall in Tirol</h4>
+                    <p className="text-sm text-gray-600">8 km • Mittelalterliche Stadt</p>
+                  </div>
+                </Link>
+                
+                <Link href="/local-guide/activities/hiking-trails" 
+                      className="flex items-center p-4 bg-white rounded-lg hover:shadow-md transition-shadow">
+                  <Mountain className="w-8 h-8 text-green-600 mr-3" />
+                  <div>
+                    <h4 className="font-semibold">Wanderwege</h4>
+                    <p className="text-sm text-gray-600">0 km • Alle Schwierigkeitsgrade</p>
+                  </div>
+                </Link>
+              </div>
+              
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link href="/local-guide">
+                  <Button variant="outline" className="min-h-[44px] w-full sm:w-auto">
+                    <MapPin className="w-4 h-4 mr-2" />
+                    Kompletter Reiseführer
+                  </Button>
+                </Link>
+                <Badge className="bg-yellow-500 text-gray-900 px-4 py-2 text-center">
+                  Hall-Wattens Gästekarte inklusive!
+                </Badge>
+              </div>
             </div>
           </TabsContent>
         </Tabs>
