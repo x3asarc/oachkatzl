@@ -263,7 +263,7 @@ const FAQSection = ({ propertyData }) => {
                 </p>
                 <Button 
                   className="w-full bg-green-600 hover:bg-green-700"
-                  onClick={() => window.open('https://booking.com', '_blank')}
+                  onClick={() => window.open('https://www.booking.com/hotel/at/appartement-39-oachkatzl-39.de.html', '_blank')}
                 >
                   Jetzt auf Booking.com buchen
                 </Button>

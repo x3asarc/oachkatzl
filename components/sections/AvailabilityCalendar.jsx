@@ -261,7 +261,7 @@ const AvailabilityCalendar = ({ propertyData }) => {
 
                     <Button 
                       className="w-full bg-blue-600 hover:bg-blue-700"
-                      onClick={() => window.open('https://booking.com', '_blank')}
+                      onClick={() => window.open('https://www.booking.com/hotel/at/appartement-39-oachkatzl-39.de.html', '_blank')}
                     >
                       Jetzt buchen
                     </Button>

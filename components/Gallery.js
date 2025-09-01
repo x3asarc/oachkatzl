@@ -6,39 +6,75 @@ export default function Gallery() {
   const images = [
     {
       id: 1,
-      src: 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: 'Living room with modern furniture',
+      src: '/images/gallery/wohnbereich.jpg',
+      alt: 'Comfortable living area with cozy seating',
       category: 'Living Area'
     },
     {
       id: 2,
-      src: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: 'Modern kitchen with stainless steel appliances',
+      src: '/images/gallery/kueche.jpg',
+      alt: 'Modern fully-equipped kitchen',
       category: 'Kitchen'
     },
     {
       id: 3,
-      src: 'https://images.unsplash.com/photo-1560448075-bb485b067938?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: 'Comfortable bedroom with queen bed',
+      src: '/images/gallery/schlafzimmer.jpg',
+      alt: 'Peaceful bedroom with comfortable bed',
       category: 'Bedroom'
     },
     {
       id: 4,
-      src: 'https://images.unsplash.com/photo-1556909114-8c6f0c0c0c0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: 'Spacious bathroom with modern fixtures',
+      src: '/images/gallery/badezimmer.jpg',
+      alt: 'Clean and modern bathroom facilities',
       category: 'Bathroom'
     },
     {
       id: 5,
-      src: 'https://images.unsplash.com/photo-1560448204-8c6f0c0c0c0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: 'Balcony with mountain views',
+      src: '/images/gallery/balkon.jpg',
+      alt: 'Private balcony with stunning mountain views',
       category: 'Balcony'
     },
     {
       id: 6,
-      src: 'https://images.unsplash.com/photo-1556909114-8c6f0c0c0c0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: 'Dining area with elegant table',
-      category: 'Dining'
+      src: '/images/gallery/ausblick-5.webp',
+      alt: 'Breathtaking mountain view from the apartment',
+      category: 'Mountain View'
+    },
+    {
+      id: 7,
+      src: '/images/gallery/grillplatz-4.webp',
+      alt: 'Outdoor BBQ area for guests',
+      category: 'BBQ Area'
+    },
+    {
+      id: 8,
+      src: '/images/gallery/terrasse-16.webp',
+      alt: 'Spacious terrace for relaxation',
+      category: 'Terrace'
+    },
+    {
+      id: 9,
+      src: '/images/gallery/kueche-42.webp',
+      alt: 'Kitchen with all modern amenities',
+      category: 'Kitchen Details'
+    },
+    {
+      id: 10,
+      src: '/images/gallery/schlafzimmer-eltern-8.webp',
+      alt: 'Master bedroom with comfortable furnishing',
+      category: 'Master Bedroom'
+    },
+    {
+      id: 11,
+      src: '/images/gallery/schlafzimmer-kinder-4.webp',
+      alt: 'Children\'s bedroom with bunk beds',
+      category: 'Children\'s Room'
+    },
+    {
+      id: 12,
+      src: '/images/gallery/badezimmer-in-der-ferienwohnung-oachkatzl-2.webp',
+      alt: 'Bathroom with shower and modern fixtures',
+      category: 'Bathroom View'
     }
   ]
 

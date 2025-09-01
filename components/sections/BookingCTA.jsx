@@ -10,7 +10,7 @@ const BookingCTA = ({ variant = 'primary', propertyData, className = '' }) => {
 
   const handleBookingClick = () => {
     // This would typically redirect to Booking.com or open a booking form
-    window.open('https://booking.com', '_blank')
+    window.open('https://www.booking.com/hotel/at/appartement-39-oachkatzl-39.de.html', '_blank')
   }
 
   if (variant === 'primary') {
@@ -87,7 +87,7 @@ const BookingCTA = ({ variant = 'primary', propertyData, className = '' }) => {
                       </p>
                       <div className="space-y-3">
                         <a 
-                          href="https://booking.com" 
+                          href="https://www.booking.com/hotel/at/appartement-39-oachkatzl-39.de.html" 
                           target="_blank" 
                           className="flex items-center gap-3 p-3 rounded-lg border hover:bg-gray-50 transition-colors"
                         >

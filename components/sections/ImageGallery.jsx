@@ -96,8 +96,8 @@ const ImageGallery = ({ propertyData }) => {
                 <Badge className="absolute top-4 left-4 bg-blue-600">
                   {galleryImages[0].category}
                 </Badge>
-                <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
-                  <Button size="sm" variant="secondary" className="bg-white/90">
+                <div className="absolute bottom-4 right-4 opacity-70 group-hover:opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity">
+                  <Button size="sm" variant="secondary" className="bg-white/90 h-11 px-4 py-2">
                     <Maximize className="w-4 h-4 mr-2" />
                     Vergrößern
                   </Button>
@@ -120,9 +120,9 @@ const ImageGallery = ({ propertyData }) => {
                 <Badge className="absolute top-2 left-2 text-xs bg-blue-600">
                   {image.category}
                 </Badge>
-                <div className="absolute bottom-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                  <Button size="sm" variant="secondary" className="bg-white/90 p-2">
-                    <Eye className="w-3 h-3" />
+                <div className="absolute bottom-2 right-2 opacity-70 group-hover:opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity">
+                  <Button size="sm" variant="secondary" className="bg-white/90 h-11 w-11 p-2">
+                    <Eye className="w-4 h-4" />
                   </Button>
                 </div>
               </div>

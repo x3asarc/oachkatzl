@@ -79,7 +79,7 @@ const ContactForm = ({ propertyData }) => {
       title: 'Booking.com',
       value: 'Direkt buchen',
       description: 'Sofortige Bestätigung',
-      action: 'https://booking.com',
+      action: 'https://www.booking.com/hotel/at/appartement-39-oachkatzl-39.de.html',
       actionText: 'Zu Booking.com'
     }
   ]
@@ -108,7 +108,7 @@ const ContactForm = ({ propertyData }) => {
                   Weitere Anfrage senden
                 </Button>
                 <Button 
-                  onClick={() => window.open('https://booking.com', '_blank')}
+                  onClick={() => window.open('https://www.booking.com/hotel/at/appartement-39-oachkatzl-39.de.html', '_blank')}
                   className="bg-blue-600 hover:bg-blue-700"
                 >
                   Jetzt direkt buchen

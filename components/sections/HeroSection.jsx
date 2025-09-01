@@ -5,7 +5,7 @@ import { Star, MapPin, Users, Home } from 'lucide-react'
 
 const HeroSection = ({ propertyData }) => {
   return (
-    <div className="relative min-h-screen bg-gradient-to-r from-blue-600 to-blue-800 text-white overflow-hidden">
+    <div className="relative min-h-[80vh] md:min-h-screen bg-gradient-to-r from-blue-600 to-blue-800 text-white overflow-hidden">
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
@@ -15,7 +15,7 @@ const HeroSection = ({ propertyData }) => {
       />
       <div className="absolute inset-0 bg-black/40" />
       
-      <div className="relative max-w-7xl mx-auto px-4 py-24 flex items-center min-h-screen">
+      <div className="relative max-w-7xl mx-auto px-4 py-12 md:py-24 flex items-center min-h-[80vh] md:min-h-screen">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full">
           
           {/* Left Column - Hero Content */}
@@ -25,12 +25,12 @@ const HeroSection = ({ propertyData }) => {
                 {propertyData.property.type}
               </Badge>
               
-              <h1 className="text-4xl md:text-6xl font-bold tracking-tight leading-tight">
+              <h1 className="text-3xl md:text-4xl lg:text-6xl font-bold tracking-tight leading-tight">
                 Appartement<br />
                 <span className="text-yellow-300">'Oachkatzl'</span>
               </h1>
               
-              <p className="text-xl md:text-2xl text-blue-100 leading-relaxed">
+              <p className="text-lg md:text-xl lg:text-2xl text-blue-100 leading-relaxed">
                 Modern Retreat in Grossvolderberg
               </p>
               
@@ -69,10 +69,10 @@ const HeroSection = ({ propertyData }) => {
 
             {/* Primary CTA */}
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <Button size="lg" className="bg-yellow-500 hover:bg-yellow-600 text-black font-semibold text-lg px-8 py-4">
+              <Button size="lg" className="bg-yellow-500 hover:bg-yellow-600 text-black font-semibold text-lg px-8 py-4 h-14">
                 Verfügbarkeit prüfen
               </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-800 text-lg px-8 py-4">
+              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-800 text-lg px-8 py-4 h-14">
                 Jetzt buchen
               </Button>
             </div>
