@@ -19,64 +19,84 @@ const ImageGallery = ({ propertyData }) => {
   const galleryImages = [
     {
       src: '/images/gallery/wohnbereich.jpg',
-      alt: 'Hauptwohnbereich mit Bergblick',
+      alt: 'Gemütlicher Wohnbereich mit Kamin und Sitzecke',
       category: 'Wohnbereich',
       featured: true
     },
     {
-      src: '/images/gallery/schlafzimmer.jpg',
-      alt: 'Hauptschlafzimmer mit Doppelbett',
-      category: 'Schlafzimmer'
+      src: '/images/gallery/Kamin & Sitzecke.webp',
+      alt: 'Kamin und gemütliche Sitzecke im Wohnzimmer',
+      category: 'Wohnbereich'
     },
     {
       src: '/images/gallery/schlafzimmer-eltern-8.webp',
-      alt: 'Elternschlafzimmer mit Bergblick',
+      alt: 'Elternschlafzimmer mit Doppelbett und Bergblick',
       category: 'Schlafzimmer'
     },
     {
-      src: '/images/gallery/kueche.jpg',
-      alt: 'Vollausgestattete moderne Küche',
+      src: '/images/gallery/Kueche 1.webp',
+      alt: 'Moderne, vollausgestattete Küche',
       category: 'Küche'
     },
     {
-      src: '/images/gallery/badezimmer.jpg',
-      alt: 'Modernes Badezimmer',
+      src: '/images/gallery/Badezimmer.webp',
+      alt: 'Modernes Badezimmer mit Dusche',
       category: 'Bad'
     },
     {
-      src: '/images/gallery/terrasse-16.webp',
-      alt: 'Terrasse mit Panorama-Bergblick',
+      src: '/images/gallery/Balkon.webp',
+      alt: 'Balkon mit atemberaubendem Bergpanorama',
       category: 'Außenbereich'
     },
     {
-      src: '/images/gallery/balkon.jpg',
-      alt: 'Balkon mit Bergpanorama',
-      category: 'Außenbereich'
+      src: '/images/gallery/Blick vom Haus.webp',
+      alt: 'Spektakulärer Blick vom Haus auf die Berge',
+      category: 'Aussicht'
     },
     {
       src: '/images/gallery/ausblick-5.webp',
-      alt: 'Atemberaubender Blick auf die Nordkette',
+      alt: 'Panoramablick auf die Tiroler Berglandschaft',
       category: 'Aussicht'
     },
     {
       src: '/images/gallery/schlafzimmer-kinder-4.webp',
-      alt: 'Kinderschlafzimmer mit Etagenbetten',
+      alt: 'Kinderschlafzimmer mit Stockbetten',
       category: 'Schlafzimmer'
     },
     {
-      src: '/images/gallery/kueche-42.webp',
-      alt: 'Küchendetails mit moderner Ausstattung',
+      src: '/images/gallery/Kueche 2.webp',
+      alt: 'Küchenbereich mit Essplatz und Ausstattung',
       category: 'Küche'
     },
     {
-      src: '/images/gallery/grillplatz-4.webp',
-      alt: 'Privater Grillplatz im Garten',
+      src: '/images/gallery/Eingang mit grillplatz.webp',
+      alt: 'Eingangsbereich mit privatem Grillplatz',
       category: 'Außenbereich'
     },
     {
-      src: '/images/gallery/ausblick-von-der-ferienwohnung-oachkatzl-volders-2.webp',
-      alt: 'Panoramablick von der Ferienwohnung',
+      src: '/images/gallery/Eingagnsbereich sitzbank.webp',
+      alt: 'Eingangsbereich mit gemütlicher Sitzbank',
+      category: 'Eingang'
+    },
+    {
+      src: '/images/gallery/Badezimmer 2.webp',
+      alt: 'Badezimmer mit moderner Einrichtung',
+      category: 'Bad'
+    },
+    {
+      src: '/images/gallery/Kafeemachine.webp',
+      alt: 'Kaffeemaschine und Küchenausstattung',
+      category: 'Küche'
+    },
+    {
+      src: '/images/gallery/Blick auf wiese.webp',
+      alt: 'Wunderschöner Blick auf grüne Wiesen',
       category: 'Aussicht'
+    },
+    {
+      src: '/images/gallery/Sitzecke.webp',
+      alt: 'Gemütliche Sitzecke zum Entspannen',
+      category: 'Wohnbereich'
     }
   ]
 
