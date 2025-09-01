@@ -2,7 +2,7 @@ import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog'
-import { Calendar, Clock, Users, Star, ArrowRight, Phone, Mail, Globe } from 'lucide-react'
+import { Calendar, Clock, Users, Star, ArrowRight, Phone, Mail, Globe, Shield, CreditCard } from 'lucide-react'
 import { useState } from 'react'
 
 const BookingCTA = ({ variant = 'primary', propertyData, className = '' }) => {
@@ -57,10 +57,10 @@ const BookingCTA = ({ variant = 'primary', propertyData, className = '' }) => {
                 </div>
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-4 pt-4">
+              <div className="flex flex-col sm:flex-row gap-6 pt-4">
                 <Button 
                   size="lg" 
-                  className="bg-yellow-500 hover:bg-yellow-600 text-black font-semibold text-lg px-8 py-4 group"
+                  className="bg-yellow-500 hover:bg-yellow-600 text-black font-semibold text-lg px-8 py-4 group min-h-[48px] touch-manipulation"
                   onClick={handleBookingClick}
                 >
                   Jetzt buchen
@@ -72,7 +72,7 @@ const BookingCTA = ({ variant = 'primary', propertyData, className = '' }) => {
                     <Button 
                       size="lg" 
                       variant="outline" 
-                      className="border-white text-white hover:bg-white hover:text-blue-800 text-lg px-8 py-4"
+                      className="border-white text-white hover:bg-white hover:text-blue-800 text-lg px-8 py-4 min-h-[48px] touch-manipulation"
                     >
                       Verfügbarkeit prüfen
                     </Button>
@@ -167,15 +167,32 @@ const BookingCTA = ({ variant = 'primary', propertyData, className = '' }) => {
                   </div>
 
                   <Button 
-                    className="w-full bg-blue-600 hover:bg-blue-700 text-lg py-6"
+                    className="w-full bg-blue-600 hover:bg-blue-700 text-lg py-6 min-h-[48px]"
                     onClick={handleBookingClick}
                   >
+                    <Shield className="w-5 h-5 mr-2" />
                     Auf Booking.com reservieren
                   </Button>
 
-                  <p className="text-xs text-gray-500 text-center">
-                    Sichere Buchung • Kostenlose Stornierung • Sofortige Bestätigung
-                  </p>
+                  <div className="space-y-2">
+                    <div className="flex items-center justify-center gap-4 text-xs text-gray-600">
+                      <div className="flex items-center gap-1">
+                        <CreditCard className="w-3 h-3" />
+                        <span>PayPal</span>
+                      </div>
+                      <div className="flex items-center gap-1">
+                        <CreditCard className="w-3 h-3" />
+                        <span>SEPA</span>
+                      </div>
+                      <div className="flex items-center gap-1">
+                        <Shield className="w-3 h-3" />
+                        <span>SSL</span>
+                      </div>
+                    </div>
+                    <p className="text-xs text-gray-500 text-center">
+                      Sichere Buchung • Kostenlose Stornierung • Sofortige Bestätigung
+                    </p>
+                  </div>
                 </div>
               </CardContent>
             </Card>

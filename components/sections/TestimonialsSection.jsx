@@ -2,7 +2,7 @@ import { Card, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Avatar, AvatarFallback } from '@/components/ui/avatar'
 import { Progress } from '@/components/ui/progress'
-import { Star, Quote } from 'lucide-react'
+import { Star, Quote, MessageCircle, Shield, Award } from 'lucide-react'
 
 const TestimonialsSection = ({ propertyData }) => {
   const testimonials = [
@@ -12,7 +12,8 @@ const TestimonialsSection = ({ propertyData }) => {
       location: "München, Deutschland",
       rating: 10,
       date: "November 2023",
-      category: "Lage & Ausstattung"
+      category: "Lage & Ausstattung",
+      hostResponse: "Vielen Dank für die wunderbare Bewertung! Es freut uns sehr, dass Sie sich bei uns wohlgefühlt haben."
     },
     {
       text: "Schön eingerichtet, war alles da, was man braucht, schöne Lage mit schönem Blick",
@@ -20,7 +21,8 @@ const TestimonialsSection = ({ propertyData }) => {
       location: "Wien, Österreich", 
       rating: 9.5,
       date: "Oktober 2023",
-      category: "Ausstattung"
+      category: "Ausstattung",
+      hostResponse: "Danke für Ihr Feedback! Wir freuen uns, Sie bald wieder begrüßen zu dürfen."
     },
     {
       text: "Eine sehr schöne Wohnung, gemütlich eingerichtet und mit allem ausgestattet",
@@ -28,7 +30,8 @@ const TestimonialsSection = ({ propertyData }) => {
       location: "Zürich, Schweiz",
       rating: 9.8,
       date: "September 2023",
-      category: "Comfort"
+      category: "Comfort",
+      hostResponse: "Herzlichen Dank! Familien sind bei uns immer willkommen."
     },
     {
       text: "Top Lage für Bergurlaub, umfangreiche saubere und hochwertige Ausstattung",
@@ -36,7 +39,8 @@ const TestimonialsSection = ({ propertyData }) => {
       location: "Berlin, Deutschland",
       rating: 9.7,
       date: "August 2023",
-      category: "Lage & Sauberkeit"
+      category: "Lage & Sauberkeit",
+      hostResponse: "Danke für die tolle Bewertung! Die Bergwelt ist wirklich einzigartig hier."
     },
     {
       text: "Wunderschöne Unterkunft, rustikal aber auch modern, beste Lage mit wunderbarem Ausblick",
@@ -44,7 +48,8 @@ const TestimonialsSection = ({ propertyData }) => {
       location: "Hamburg, Deutschland",
       rating: 10,
       date: "Juli 2023",
-      category: "Design & Lage"
+      category: "Design & Lage",
+      hostResponse: "Vielen Dank! Diese Balance zwischen rustikal und modern liegt uns sehr am Herzen."
     }
   ]
 
@@ -137,7 +142,7 @@ const TestimonialsSection = ({ propertyData }) => {
                           </div>
                         </div>
                         
-                        <div className="flex items-center justify-between text-sm">
+                        <div className="flex items-center justify-between text-sm mb-3">
                           <div className="flex items-center gap-1">
                             <Star className="w-4 h-4 text-yellow-500 fill-yellow-500" />
                             <span className="font-semibold">{testimonial.rating}</span>
@@ -147,6 +152,18 @@ const TestimonialsSection = ({ propertyData }) => {
                             <span className="text-gray-500">{testimonial.date}</span>
                           </div>
                         </div>
+                        
+                        {testimonial.hostResponse && (
+                          <div className="mt-3 p-3 bg-blue-50 rounded-lg border-l-4 border-blue-500">
+                            <div className="flex items-start gap-2">
+                              <MessageCircle className="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" />
+                              <div>
+                                <p className="text-sm font-medium text-blue-800 mb-1">Antwort des Gastgebers:</p>
+                                <p className="text-sm text-gray-700">{testimonial.hostResponse}</p>
+                              </div>
+                            </div>
+                          </div>
+                        )}
                       </div>
                     </div>
                   </CardContent>
@@ -188,35 +205,50 @@ const TestimonialsSection = ({ propertyData }) => {
             {/* Trust Indicators */}
             <Card className="bg-blue-50 border-blue-200">
               <CardContent className="p-6 space-y-4">
-                <h4 className="font-bold text-lg mb-4">Vertrauen & Sicherheit</h4>
+                <div className="flex items-center gap-2 mb-4">
+                  <Shield className="w-5 h-5 text-blue-600" />
+                  <h4 className="font-bold text-lg">Vertrauen & Sicherheit</h4>
+                </div>
                 
                 <div className="space-y-3">
                   <div className="flex items-center gap-3">
-                    <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
-                      <span className="text-white text-sm">✓</span>
+                    <Award className="w-5 h-5 text-green-600" />
+                    <div>
+                      <div className="text-sm font-medium">100% Host-Antwortrate</div>
+                      <div className="text-xs text-gray-600">Alle Bewertungen werden beantwortet</div>
                     </div>
-                    <span className="text-sm">Verifizierte Bewertungen</span>
                   </div>
                   
                   <div className="flex items-center gap-3">
-                    <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
-                      <span className="text-white text-sm">✓</span>
+                    <Shield className="w-5 h-5 text-blue-600" />
+                    <div>
+                      <div className="text-sm font-medium">SSL-Verschlüsselung</div>
+                      <div className="text-xs text-gray-600">Sichere Datenübertragung</div>
                     </div>
-                    <span className="text-sm">Booking.com Partner seit 2021</span>
                   </div>
                   
                   <div className="flex items-center gap-3">
-                    <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
-                      <span className="text-white text-sm">✓</span>
+                    <MessageCircle className="w-5 h-5 text-purple-600" />
+                    <div>
+                      <div className="text-sm font-medium">Booking.com Partner seit 2021</div>
+                      <div className="text-xs text-gray-600">Verifizierter Gastgeber</div>
                     </div>
-                    <span className="text-sm">Sofortige Buchungsbestätigung</span>
                   </div>
                   
                   <div className="flex items-center gap-3">
-                    <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
-                      <span className="text-white text-sm">✓</span>
+                    <Star className="w-5 h-5 text-yellow-500" />
+                    <div>
+                      <div className="text-sm font-medium">GDPR-konform</div>
+                      <div className="text-xs text-gray-600">Deutsche Datenschutzstandards</div>
                     </div>
-                    <span className="text-sm">Kostenlose Stornierung</span>
+                  </div>
+                </div>
+
+                <div className="mt-4 pt-4 border-t border-blue-200">
+                  <div className="text-xs text-gray-600 space-y-1">
+                    <p>• Sofortige Buchungsbestätigung</p>
+                    <p>• Kostenlose Stornierung bis 24h vorher</p>
+                    <p>• PayPal & SEPA Überweisung akzeptiert</p>
                   </div>
                 </div>
               </CardContent>

@@ -11,9 +11,11 @@ import {
   Users, 
   CheckCircle,
   AlertCircle,
-  Info
+  Info,
+  Shield,
+  CreditCard
 } from 'lucide-react'
-import { format, addDays, isSameDay, isAfter, isBefore } from 'date-fns'
+import { format, addDays, isSameDay, isAfter, isBefore, startOfWeek } from 'date-fns'
 import { de } from 'date-fns/locale'
 
 const AvailabilityCalendar = ({ propertyData }) => {
@@ -155,9 +157,11 @@ const AvailabilityCalendar = ({ propertyData }) => {
                   mode="single"
                   selected={selectedDates.checkIn}
                   onSelect={handleDateSelect}
-                  className="rounded-md border"
+                  className="rounded-md border touch-manipulation"
                   month={currentMonth}
                   onMonthChange={setCurrentMonth}
+                  locale={de}
+                  weekStartsOn={1}
                   disabled={(date) => {
                     const status = getDateStatus(date)
                     return status === 'booked' || status === 'maintenance' || 
@@ -172,11 +176,37 @@ const AvailabilityCalendar = ({ propertyData }) => {
                     inRange: isDateInRange
                   }}
                   modifiersStyles={{
-                    available: { backgroundColor: '#10B981', color: 'white' },
-                    booked: { backgroundColor: '#EF4444', color: 'white' },
-                    maintenance: { backgroundColor: '#F59E0B', color: 'white' },
-                    selected: { backgroundColor: '#3B82F6', color: 'white', fontWeight: 'bold' },
-                    inRange: { backgroundColor: '#DBEAFE', color: '#1E40AF' }
+                    available: { 
+                      backgroundColor: '#10B981', 
+                      color: 'white',
+                      minHeight: '44px',
+                      minWidth: '44px'
+                    },
+                    booked: { 
+                      backgroundColor: '#EF4444', 
+                      color: 'white',
+                      minHeight: '44px',
+                      minWidth: '44px'
+                    },
+                    maintenance: { 
+                      backgroundColor: '#F59E0B', 
+                      color: 'white',
+                      minHeight: '44px',
+                      minWidth: '44px'
+                    },
+                    selected: { 
+                      backgroundColor: '#3B82F6', 
+                      color: 'white', 
+                      fontWeight: 'bold',
+                      minHeight: '44px',
+                      minWidth: '44px'
+                    },
+                    inRange: { 
+                      backgroundColor: '#DBEAFE', 
+                      color: '#1E40AF',
+                      minHeight: '44px',
+                      minWidth: '44px'
+                    }
                   }}
                 />
 
@@ -259,12 +289,26 @@ const AvailabilityCalendar = ({ propertyData }) => {
                       </div>
                     </div>
 
-                    <Button 
-                      className="w-full bg-blue-600 hover:bg-blue-700"
-                      onClick={() => window.open('https://www.booking.com/hotel/at/appartement-39-oachkatzl-39.de.html', '_blank')}
-                    >
-                      Jetzt buchen
-                    </Button>
+                    <div className="space-y-3">
+                      <Button 
+                        className="w-full bg-blue-600 hover:bg-blue-700 min-h-[48px] touch-manipulation"
+                        onClick={() => window.open('https://www.booking.com/hotel/at/appartement-39-oachkatzl-39.de.html', '_blank')}
+                      >
+                        <Shield className="w-4 h-4 mr-2" />
+                        Jetzt buchen
+                      </Button>
+                      
+                      <div className="flex items-center justify-center gap-3 text-xs text-gray-600">
+                        <div className="flex items-center gap-1">
+                          <CreditCard className="w-3 h-3 text-blue-600" />
+                          <span>PayPal akzeptiert</span>
+                        </div>
+                        <div className="flex items-center gap-1">
+                          <Shield className="w-3 h-3 text-green-600" />
+                          <span>SEPA möglich</span>
+                        </div>
+                      </div>
+                    </div>
                   </>
                 )}
 
