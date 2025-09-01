@@ -55,7 +55,7 @@ const AvailabilityCalendar = ({ propertyData }) => {
   }
 
   const pricingInfo = {
-    basePrice: 85,
+    basePrice: 139,
     weekendSurcharge: 15,
     cleaningFee: 25,
     taxRate: 0.10

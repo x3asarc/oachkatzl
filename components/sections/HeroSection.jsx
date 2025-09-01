@@ -40,39 +40,39 @@ const HeroSection = ({ propertyData }) => {
             </div>
 
             {/* Rating & Stats */}
-            <div className="flex items-center gap-6 text-lg">
+            <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6 text-base sm:text-lg">
               <div className="flex items-center gap-2">
-                <Star className="w-6 h-6 text-yellow-400 fill-yellow-400" />
+                <Star className="w-5 h-5 sm:w-6 sm:h-6 text-yellow-400 fill-yellow-400" />
                 <span className="font-bold">{propertyData.ratings.overall_rating}/10</span>
               </div>
-              <div className="h-6 w-px bg-white/30" />
+              <div className="hidden sm:block h-6 w-px bg-white/30" />
               <span className="font-medium">{propertyData.ratings.rating_category}</span>
-              <div className="h-6 w-px bg-white/30" />
-              <span>{propertyData.ratings.total_reviews} Bewertungen</span>
+              <div className="hidden sm:block h-6 w-px bg-white/30" />
+              <span className="text-sm sm:text-base">{propertyData.ratings.total_reviews} Bewertungen</span>
             </div>
 
             {/* Quick Stats */}
-            <div className="flex items-center gap-6 text-base">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-6 text-sm sm:text-base">
               <div className="flex items-center gap-2">
-                <Home className="w-5 h-5" />
+                <Home className="w-4 h-4 sm:w-5 sm:h-5" />
                 <span>{propertyData.accommodation_details.size}</span>
               </div>
               <div className="flex items-center gap-2">
-                <Users className="w-5 h-5" />
+                <Users className="w-4 h-4 sm:w-5 sm:h-5" />
                 <span>{propertyData.accommodation_details.max_guests} Gäste</span>
               </div>
               <div className="flex items-center gap-2">
-                <MapPin className="w-5 h-5" />
-                <span>{propertyData.property.coordinates.location_description}</span>
+                <MapPin className="w-4 h-4 sm:w-5 sm:h-5" />
+                <span className="truncate">{propertyData.property.coordinates.location_description}</span>
               </div>
             </div>
 
             {/* Primary CTA */}
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <Button size="lg" className="bg-yellow-500 hover:bg-yellow-600 text-black font-semibold text-lg px-8 py-4 h-14">
+              <Button size="lg" className="bg-yellow-500 hover:bg-yellow-600 text-black font-semibold text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 min-h-[48px] w-full sm:w-auto">
                 Verfügbarkeit prüfen
               </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-800 text-lg px-8 py-4 h-14">
+              <Button size="lg" className="bg-white/10 backdrop-blur-sm border-2 border-white text-white hover:bg-white hover:text-blue-800 text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 min-h-[48px] w-full sm:w-auto transition-all">
                 Jetzt buchen
               </Button>
             </div>
@@ -138,9 +138,10 @@ const HeroSection = ({ propertyData }) => {
                   <div className="flex items-center justify-between">
                     <div>
                       <p className="text-sm text-gray-600">Ab</p>
-                      <p className="text-2xl font-bold text-blue-600">€85<span className="text-base font-normal">/Nacht</span></p>
+                      <p className="text-xl sm:text-2xl font-bold text-blue-600">€139<span className="text-sm sm:text-base font-normal">/Nacht</span></p>
+                      <p className="text-xs text-gray-500">zzgl. €25 Reinigung</p>
                     </div>
-                    <Badge className="bg-green-100 text-green-800 border-green-200">
+                    <Badge className="bg-green-100 text-green-800 border-green-200 text-xs sm:text-sm">
                       Verfügbar
                     </Badge>
                   </div>

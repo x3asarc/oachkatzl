@@ -161,9 +161,10 @@ const BookingCTA = ({ variant = 'primary', propertyData, className = '' }) => {
                   <div className="border-t pt-4">
                     <div className="flex items-center justify-between mb-2">
                       <span className="text-lg font-semibold">Ab</span>
-                      <span className="text-3xl font-bold text-blue-600">€85</span>
+                      <span className="text-2xl sm:text-3xl font-bold text-blue-600">€139</span>
                     </div>
                     <p className="text-sm text-gray-600 text-right">pro Nacht</p>
+                    <p className="text-xs text-gray-500 text-right">zzgl. €25 Reinigung</p>
                   </div>
 
                   <Button 

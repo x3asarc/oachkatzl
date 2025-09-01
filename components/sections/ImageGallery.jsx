@@ -18,44 +18,64 @@ const ImageGallery = ({ propertyData }) => {
 
   const galleryImages = [
     {
-      src: '/images/gallery/main-living-room.jpg',
+      src: '/images/gallery/wohnbereich.jpg',
       alt: 'Hauptwohnbereich mit Bergblick',
       category: 'Wohnbereich',
       featured: true
     },
     {
-      src: '/images/gallery/bedroom-1.jpg',
-      alt: 'Schlafzimmer 1 mit Doppelbett',
+      src: '/images/gallery/schlafzimmer.jpg',
+      alt: 'Hauptschlafzimmer mit Doppelbett',
       category: 'Schlafzimmer'
     },
     {
-      src: '/images/gallery/bedroom-2.jpg',
-      alt: 'Schlafzimmer 2 mit Etagenbetten',
+      src: '/images/gallery/schlafzimmer-eltern-8.webp',
+      alt: 'Elternschlafzimmer mit Bergblick',
       category: 'Schlafzimmer'
     },
     {
-      src: '/images/gallery/kitchen.jpg',
+      src: '/images/gallery/kueche.jpg',
       alt: 'Vollausgestattete moderne Küche',
       category: 'Küche'
     },
     {
-      src: '/images/gallery/bathroom.jpg',
+      src: '/images/gallery/badezimmer.jpg',
       alt: 'Modernes Badezimmer',
       category: 'Bad'
     },
     {
-      src: '/images/gallery/terrace-view.jpg',
+      src: '/images/gallery/terrasse-16.webp',
       alt: 'Terrasse mit Panorama-Bergblick',
       category: 'Außenbereich'
     },
     {
-      src: '/images/gallery/garden.jpg',
-      alt: 'Privater Garten mit BBQ-Bereich',
+      src: '/images/gallery/balkon.jpg',
+      alt: 'Balkon mit Bergpanorama',
       category: 'Außenbereich'
     },
     {
-      src: '/images/gallery/mountain-view.jpg',
+      src: '/images/gallery/ausblick-5.webp',
       alt: 'Atemberaubender Blick auf die Nordkette',
+      category: 'Aussicht'
+    },
+    {
+      src: '/images/gallery/schlafzimmer-kinder-4.webp',
+      alt: 'Kinderschlafzimmer mit Etagenbetten',
+      category: 'Schlafzimmer'
+    },
+    {
+      src: '/images/gallery/kueche-42.webp',
+      alt: 'Küchendetails mit moderner Ausstattung',
+      category: 'Küche'
+    },
+    {
+      src: '/images/gallery/grillplatz-4.webp',
+      alt: 'Privater Grillplatz im Garten',
+      category: 'Außenbereich'
+    },
+    {
+      src: '/images/gallery/ausblick-von-der-ferienwohnung-oachkatzl-volders-2.webp',
+      alt: 'Panoramablick von der Ferienwohnung',
       category: 'Aussicht'
     }
   ]
@@ -81,25 +101,25 @@ const ImageGallery = ({ propertyData }) => {
         </div>
 
         {/* Featured Image + Grid Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 mb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mb-8">
           {/* Main Featured Image */}
-          <div className="lg:col-span-2 lg:row-span-2">
-            <Card className="overflow-hidden h-full cursor-pointer group" 
+          <div className="sm:col-span-2 lg:col-span-2 lg:row-span-2">
+            <Card className="overflow-hidden h-full cursor-pointer group touch-manipulation" 
                   onClick={() => handleImageClick(galleryImages[0])}>
-              <div className="relative h-full min-h-[400px] lg:min-h-[500px]">
+              <div className="relative h-full min-h-[300px] sm:min-h-[400px] lg:min-h-[500px]">
                 <img 
                   src={galleryImages[0].src}
                   alt={galleryImages[0].alt}
                   className="w-full h-full object-cover transition-transform group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors" />
-                <Badge className="absolute top-4 left-4 bg-blue-600">
+                <Badge className="absolute top-3 left-3 sm:top-4 sm:left-4 bg-blue-600 text-xs sm:text-sm">
                   {galleryImages[0].category}
                 </Badge>
-                <div className="absolute bottom-4 right-4 opacity-70 group-hover:opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity">
-                  <Button size="sm" variant="secondary" className="bg-white/90 h-11 px-4 py-2">
-                    <Maximize className="w-4 h-4 mr-2" />
-                    Vergrößern
+                <div className="absolute bottom-3 right-3 sm:bottom-4 sm:right-4 opacity-90 group-hover:opacity-100 transition-opacity">
+                  <Button size="sm" variant="secondary" className="bg-white/90 min-h-[44px] px-3 py-2 text-xs sm:text-sm">
+                    <Maximize className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
+                    <span className="hidden sm:inline">Vergrößern</span>
                   </Button>
                 </div>
               </div>
@@ -108,9 +128,9 @@ const ImageGallery = ({ propertyData }) => {
 
           {/* Grid Images */}
           {galleryImages.slice(1, 5).map((image, index) => (
-            <Card key={index} className="overflow-hidden cursor-pointer group" 
+            <Card key={index} className="overflow-hidden cursor-pointer group touch-manipulation" 
                   onClick={() => handleImageClick(image)}>
-              <div className="relative h-48 lg:h-60">
+              <div className="relative h-40 sm:h-48 lg:h-60">
                 <img 
                   src={image.src}
                   alt={image.alt}
@@ -120,9 +140,9 @@ const ImageGallery = ({ propertyData }) => {
                 <Badge className="absolute top-2 left-2 text-xs bg-blue-600">
                   {image.category}
                 </Badge>
-                <div className="absolute bottom-2 right-2 opacity-70 group-hover:opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity">
-                  <Button size="sm" variant="secondary" className="bg-white/90 h-11 w-11 p-2">
-                    <Eye className="w-4 h-4" />
+                <div className="absolute bottom-2 right-2 opacity-90 group-hover:opacity-100 transition-opacity">
+                  <Button size="sm" variant="secondary" className="bg-white/90 min-h-[44px] min-w-[44px] p-2">
+                    <Eye className="w-3 h-3 sm:w-4 sm:h-4" />
                   </Button>
                 </div>
               </div>
@@ -131,49 +151,49 @@ const ImageGallery = ({ propertyData }) => {
         </div>
 
         {/* Category Carousel */}
-        <div className="space-y-8">
-          <h3 className="text-2xl font-bold text-center">Alle Bereiche</h3>
+        <div className="space-y-6 sm:space-y-8">
+          <h3 className="text-xl sm:text-2xl font-bold text-center">Alle Bereiche</h3>
           
           <Carousel className="w-full">
-            <CarouselContent>
+            <CarouselContent className="-ml-2 sm:-ml-4">
               {galleryImages.slice(5).map((image, index) => (
-                <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
-                  <Card className="overflow-hidden cursor-pointer group" 
+                <CarouselItem key={index} className="pl-2 sm:pl-4 basis-4/5 sm:basis-1/2 lg:basis-1/3">
+                  <Card className="overflow-hidden cursor-pointer group touch-manipulation" 
                         onClick={() => handleImageClick(image)}>
-                    <div className="relative h-64">
+                    <div className="relative h-48 sm:h-56 lg:h-64">
                       <img 
                         src={image.src}
                         alt={image.alt}
                         className="w-full h-full object-cover transition-transform group-hover:scale-105"
                       />
                       <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors" />
-                      <Badge className="absolute top-2 left-2 bg-blue-600">
+                      <Badge className="absolute top-2 left-2 bg-blue-600 text-xs">
                         {image.category}
                       </Badge>
                     </div>
-                    <CardContent className="p-4">
-                      <p className="font-medium text-gray-900">{image.alt}</p>
+                    <CardContent className="p-3 sm:p-4">
+                      <p className="font-medium text-gray-900 text-sm sm:text-base line-clamp-2">{image.alt}</p>
                     </CardContent>
                   </Card>
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
+            <CarouselPrevious className="left-0 sm:-left-12" />
+            <CarouselNext className="right-0 sm:-right-12" />
           </Carousel>
         </div>
 
         {/* View All Images Button */}
-        <div className="text-center mt-8">
+        <div className="text-center mt-6 sm:mt-8">
           <Button 
             variant="outline" 
             size="lg" 
             onClick={() => handleImageClick(galleryImages[0])}
-            className="group"
+            className="group min-h-[48px] px-6 py-3 w-full sm:w-auto"
           >
-            <ImageIcon className="w-5 h-5 mr-2" />
-            Alle {galleryImages.length} Bilder ansehen
-            <Eye className="w-4 h-4 ml-2 group-hover:scale-110 transition-transform" />
+            <ImageIcon className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
+            <span className="text-sm sm:text-base">Alle {galleryImages.length} Bilder ansehen</span>
+            <Eye className="w-3 h-3 sm:w-4 sm:h-4 ml-2 group-hover:scale-110 transition-transform" />
           </Button>
         </div>
       </div>
