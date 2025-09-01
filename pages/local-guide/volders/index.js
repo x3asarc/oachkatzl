@@ -417,15 +417,96 @@ export default function VoldersVillagePage() {
             </div>
           </section>
 
-          <div className="mt-12 text-center">
-            <h3 className="text-xl font-semibold mb-4">Ready to explore Volders?</h3>
-            <Link 
-              href="/#booking" 
-              className="inline-flex items-center bg-green-600 text-white px-8 py-3 rounded-lg hover:bg-green-700 transition"
-            >
-              Book Your Stay at Oachkatzl
-              <ChevronRight className="w-5 h-5 ml-2" />
-            </Link>
+          <div className="mt-12 bg-primary/5 rounded-lg p-8">
+            <h2 className="text-2xl font-bold mb-4 text-center">Explore the Hall-Wattens Region</h2>
+            
+            <div className="grid md:grid-cols-2 gap-8 mb-8">
+              <div>
+                <h3 className="text-lg font-semibold mb-4">Volders Location</h3>
+                <div className="rounded-lg overflow-hidden shadow-md">
+                  <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10841.234567!2d11.5567!3d47.2783!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479d6c1f5a7b9c3d%3A0x1234567890abcdef!2sVolders%2C%20Austria!5e0!3m2!1sen!2sat!4v1234567890"
+                    width="100%"
+                    height="300"
+                    style={{ border: 0 }}
+                    allowFullScreen=""
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="Volders Map"
+                  />
+                </div>
+                <p className="text-sm text-gray-600 mt-2">
+                  Volders is centrally located in the Hall-Wattens region, offering easy access to Swarovski Crystal Worlds, 
+                  medieval Hall in Tirol, and scenic mountain villages while maintaining its quiet village charm.
+                </p>
+              </div>
+              
+              <div>
+                <h3 className="text-lg font-semibold mb-4">Nearby Villages</h3>
+                <div className="space-y-3">
+                  <Link href="/local-guide/baumkirchen" className="block hover:bg-white/50 p-3 rounded-lg transition-colors">
+                    <div className="flex justify-between items-center">
+                      <div>
+                        <p className="font-medium text-primary">Baumkirchen</p>
+                        <p className="text-sm text-gray-600">Orchards & cycling paths</p>
+                      </div>
+                      <Badge variant="outline">4 km</Badge>
+                    </div>
+                  </Link>
+                  
+                  <Link href="/local-guide/wattens" className="block hover:bg-white/50 p-3 rounded-lg transition-colors">
+                    <div className="flex justify-between items-center">
+                      <div>
+                        <p className="font-medium text-primary">Wattens</p>
+                        <p className="text-sm text-gray-600">Swarovski Crystal Worlds</p>
+                      </div>
+                      <Badge variant="outline">5 km</Badge>
+                    </div>
+                  </Link>
+                  
+                  <Link href="/local-guide/fritzens" className="block hover:bg-white/50 p-3 rounded-lg transition-colors">
+                    <div className="flex justify-between items-center">
+                      <div>
+                        <p className="font-medium text-primary">Fritzens</p>
+                        <p className="text-sm text-gray-600">Panoramic views & hiking trails</p>
+                      </div>
+                      <Badge variant="outline">6 km</Badge>
+                    </div>
+                  </Link>
+                  
+                  <Link href="/local-guide/hall-in-tirol" className="block hover:bg-white/50 p-3 rounded-lg transition-colors">
+                    <div className="flex justify-between items-center">
+                      <div>
+                        <p className="font-medium text-primary">Hall in Tirol</p>
+                        <p className="text-sm text-gray-600">Medieval old town & mint museum</p>
+                      </div>
+                      <Badge variant="outline">7 km</Badge>
+                    </div>
+                  </Link>
+                  
+                  <Link href="/local-guide/gnadenwald" className="block hover:bg-white/50 p-3 rounded-lg transition-colors">
+                    <div className="flex justify-between items-center">
+                      <div>
+                        <p className="font-medium text-primary">Gnadenwald</p>
+                        <p className="text-sm text-gray-600">Mountain terrace & paragliding</p>
+                      </div>
+                      <Badge variant="outline">10 km</Badge>
+                    </div>
+                  </Link>
+                </div>
+              </div>
+            </div>
+            
+            <div className="text-center mt-6">
+              <h3 className="text-xl font-semibold mb-4">Ready to explore Volders?</h3>
+              <Link 
+                href="/#booking" 
+                className="inline-flex items-center bg-green-600 text-white px-8 py-3 rounded-lg hover:bg-green-700 transition"
+              >
+                Book Your Stay at Oachkatzl
+                <ChevronRight className="w-5 h-5 ml-2" />
+              </Link>
+            </div>
           </div>
         </div>
       </div>

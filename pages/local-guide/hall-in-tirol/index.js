@@ -163,14 +163,95 @@ export default function HallInTirolPage() {
             </div>
           </section>
 
-          <div className="text-center">
-            <Link 
-              href="/#booking" 
-              className="inline-flex items-center bg-amber-600 text-white px-8 py-3 rounded-lg hover:bg-amber-700 transition"
-            >
-              Book Your Stay Near Hall in Tirol
-              <ChevronRight className="w-5 h-5 ml-2" />
-            </Link>
+          <div className="bg-primary/5 rounded-lg p-8 mt-12">
+            <h2 className="text-2xl font-bold mb-4 text-center">Explore the Hall-Wattens Region</h2>
+            
+            <div className="grid md:grid-cols-2 gap-8 mb-8">
+              <div>
+                <h3 className="text-lg font-semibold mb-4">Hall in Tirol Location</h3>
+                <div className="rounded-lg overflow-hidden shadow-md">
+                  <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10841.234567!2d11.5083!3d47.2833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479d6b5f7a8c8e7f%3A0x1234567890abcdef!2sHall%20in%20Tirol%2C%20Austria!5e0!3m2!1sen!2sat!4v1234567890"
+                    width="100%"
+                    height="300"
+                    style={{ border: 0 }}
+                    allowFullScreen=""
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="Hall in Tirol Map"
+                  />
+                </div>
+                <p className="text-sm text-gray-600 mt-2">
+                  Hall in Tirol, the region's historic center, features one of Austria's best-preserved medieval old towns 
+                  and serves as the cultural hub of the Hall-Wattens region.
+                </p>
+              </div>
+              
+              <div>
+                <h3 className="text-lg font-semibold mb-4">Nearby Villages</h3>
+                <div className="space-y-3">
+                  <Link href="/local-guide/baumkirchen" className="block hover:bg-white/50 p-3 rounded-lg transition-colors">
+                    <div className="flex justify-between items-center">
+                      <div>
+                        <p className="font-medium text-primary">Baumkirchen</p>
+                        <p className="text-sm text-gray-600">Orchards & cycling paths</p>
+                      </div>
+                      <Badge variant="outline">5 km</Badge>
+                    </div>
+                  </Link>
+                  
+                  <Link href="/local-guide/wattens" className="block hover:bg-white/50 p-3 rounded-lg transition-colors">
+                    <div className="flex justify-between items-center">
+                      <div>
+                        <p className="font-medium text-primary">Wattens</p>
+                        <p className="text-sm text-gray-600">Swarovski Crystal Worlds</p>
+                      </div>
+                      <Badge variant="outline">6 km</Badge>
+                    </div>
+                  </Link>
+                  
+                  <Link href="/local-guide/volders" className="block hover:bg-white/50 p-3 rounded-lg transition-colors">
+                    <div className="flex justify-between items-center">
+                      <div>
+                        <p className="font-medium text-primary">Volders</p>
+                        <p className="text-sm text-gray-600">Historic churches & Lake Volders</p>
+                      </div>
+                      <Badge variant="outline">7 km</Badge>
+                    </div>
+                  </Link>
+                  
+                  <Link href="/local-guide/gnadenwald" className="block hover:bg-white/50 p-3 rounded-lg transition-colors">
+                    <div className="flex justify-between items-center">
+                      <div>
+                        <p className="font-medium text-primary">Gnadenwald</p>
+                        <p className="text-sm text-gray-600">Mountain terrace & paragliding</p>
+                      </div>
+                      <Badge variant="outline">8 km</Badge>
+                    </div>
+                  </Link>
+                  
+                  <Link href="/local-guide/fritzens" className="block hover:bg-white/50 p-3 rounded-lg transition-colors">
+                    <div className="flex justify-between items-center">
+                      <div>
+                        <p className="font-medium text-primary">Fritzens</p>
+                        <p className="text-sm text-gray-600">Panoramic views & hiking trails</p>
+                      </div>
+                      <Badge variant="outline">9 km</Badge>
+                    </div>
+                  </Link>
+                </div>
+              </div>
+            </div>
+            
+            <div className="text-center mt-6">
+              <Link 
+                href="/#booking" 
+                className="inline-flex items-center bg-amber-600 text-white px-8 py-3 rounded-lg hover:bg-amber-700 transition"
+              >
+                Book Your Stay Near Hall in Tirol
+                <ChevronRight className="w-5 h-5 ml-2" />
+              </Link>
+            </div>
           </div>
         </div>
       </div>
